@@ -29,607 +29,607 @@ export const airDates = [
 
 export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
   {
-    SAI: {
+    JEREMIAH: {
       votes: 1,
       advantage: 1,
       idolFound: 2,
     },
-    KEVIN: {
+    NICOLE: {
       votes: 1,
     },
-    CEDREK: {
+    RIZO: {
       votes: 1,
     },
-    JUSTIN: {
+    SAVANNAH: {
       votes: 1,
     },
-    KAMILLA: {
+    MATT: {
       teamImmunity: 1,
     },
-    CHARITY: {
+    SAGE: {
       teamImmunity: 1,
     },
-    CHRISSY: {
+    SOPHI: {
       teamImmunity: 1,
     },
-    DAVID: {
+    MC: {
       teamImmunity: 1,
     },
-    KYLE: {
+    JASON: {
       teamImmunity: 1,
     },
-    MITCH: {
+    JAWAN: {
       teamImmunity: 1,
     },
-    BIANCA: {
+    SHANNON: {
       teamImmunity: 1,
     },
-    EVA: {
+    JAKE: {
       teamImmunity: 1,
     },
-    JOE: {
+    KRISTINA: {
       teamImmunity: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       teamImmunity: 1,
     },
-    STAR: {
+    SOPHIE: {
       teamImmunity: 1,
     },
-    THOMAS: {
+    NATE: {
       teamImmunity: 1,
     },
   },
   {
-    SAI: {
+    JEREMIAH: {
       voteNullified: 1,
       survival: 1,
       votes: 1,
     },
-    KEVIN: {
+    NICOLE: {
       survival: 1,
     },
-    CEDREK: {
-      survival: 1,
-      votes: 1,
-    },
-    JUSTIN: {
+    RIZO: {
       survival: 1,
       votes: 1,
     },
-    MARY: {
+    SAVANNAH: {
+      survival: 1,
+      votes: 1,
+    },
+    STEVEN: {
       survival: 1,
     },
-    KAMILLA: {
-      survival: 1,
-      teamImmunity: 1,
-    },
-    CHARITY: {
-      survival: 1,
-      teamImmunity: 1,
-    },
-    CHRISSY: {
+    MATT: {
       survival: 1,
       teamImmunity: 1,
     },
-    DAVID: {
+    SAGE: {
       survival: 1,
       teamImmunity: 1,
     },
-    KYLE: {
+    SOPHI: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    MC: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    JASON: {
       survival: 1,
       teamImmunity: 1,
       advantage: 1,
       idolFound: 2,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
       teamImmunity: 1,
       advantage: 1,
     },
-    BIANCA: {
+    SHANNON: {
       survival: 1,
       teamImmunity: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
       teamImmunity: 1,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
       teamImmunity: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       teamImmunity: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
       teamImmunity: 1,
       advantage: 1,
     },
-    THOMAS: {
+    NATE: {
       survival: 1,
       teamImmunity: 1,
       advantage: 1,
     },
   },
   {
-    SAI: {
+    JEREMIAH: {
       survival: 1,
     },
-    CEDREK: {
+    RIZO: {
       survival: 1,
       votes: 1,
     },
-    JUSTIN: {
+    SAVANNAH: {
       survival: 1,
     },
-    MARY: {
+    STEVEN: {
       survival: 1,
       voteNullified: 2,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
       teamImmunity: 1,
       advantage: 1,
     },
-    CHARITY: {
+    SAGE: {
       survival: 1,
       teamImmunity: 1,
     },
-    CHRISSY: {
+    SOPHI: {
       survival: 1,
       teamImmunity: 1,
     },
-    DAVID: {
+    MC: {
       survival: 1,
       teamImmunity: 1,
     },
-    KYLE: {
+    JASON: {
       survival: 1,
       teamImmunity: 1,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
       teamImmunity: 1,
     },
-    BIANCA: {
+    SHANNON: {
       survival: 1,
       teamImmunity: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
       teamImmunity: 1,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
       teamImmunity: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       teamImmunity: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
       teamImmunity: 1,
     },
-    THOMAS: {
+    NATE: {
       survival: 1,
       teamImmunity: 1,
     },
   },
   {
-    SAI: {
+    JEREMIAH: {
       survival: 1,
       teamImmunity: 1,
     },
-    CEDREK: {
+    RIZO: {
       survival: 1,
       teamImmunity: 1,
     },
-    MARY: {
+    STEVEN: {
       survival: 1,
       teamImmunity: 1,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
       votes: 1,
     },
-    CHARITY: {
+    SAGE: {
       survival: 1,
       teamImmunity: 1,
     },
-    CHRISSY: {
+    SOPHI: {
       survival: 1,
       teamImmunity: 1,
     },
-    DAVID: {
+    MC: {
       survival: 1,
       teamImmunity: 1,
     },
-    KYLE: {
+    JASON: {
       survival: 1,
       voteNullified: 3,
       votes: 1,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
       teamImmunity: 1,
     },
-    BIANCA: {
+    SHANNON: {
       survival: 1,
       teamImmunity: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
       teamImmunity: 1,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
       teamImmunity: 1,
     },
-    THOMAS: {
+    NATE: {
       survival: 1,
     },
   },
   {
-    SAI: {
+    JEREMIAH: {
       survival: 1,
     },
-    CEDREK: {
-      survival: 1,
-      votes: 1,
-    },
-    MARY: {
-      survival: 1,
-      teamImmunity: 1,
-    },
-    KAMILLA: {
-      survival: 1,
-      teamImmunity: 1,
-    },
-    CHARITY: {
-      survival: 1,
-      teamImmunity: 1,
-    },
-    CHRISSY: {
+    RIZO: {
       survival: 1,
       votes: 1,
     },
-    DAVID: {
+    STEVEN: {
       survival: 1,
       teamImmunity: 1,
     },
-    KYLE: {
+    MATT: {
       survival: 1,
       teamImmunity: 1,
     },
-    MITCH: {
+    SAGE: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    SOPHI: {
+      survival: 1,
+      votes: 1,
+    },
+    MC: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    JASON: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    JAWAN: {
       survival: 1,
     },
-    BIANCA: {
+    SHANNON: {
       survival: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
       teamImmunity: 1,
       idolFound: 2,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
       teamImmunity: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       teamImmunity: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
       teamImmunity: 1,
     },
   },
   {
-    SAI: {
+    JEREMIAH: {
       survival: 1,
       advantage: 1,
     },
-    CEDREK: {
+    RIZO: {
       survival: 1,
       votes: 1,
     },
-    MARY: {
+    STEVEN: {
       survival: 1,
       votes: 1,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
       votes: 1,
     },
-    CHARITY: {
+    SAGE: {
       survival: 1,
     },
-    CHRISSY: {
+    SOPHI: {
       survival: 1,
       votes: 1,
     },
-    DAVID: {
+    MC: {
       survival: 1,
     },
-    KYLE: {
+    JASON: {
       survival: 1,
       individualImmunity: 2,
       votes: 1,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
       votes: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
       votes: 1,
     },
   },
   {
-    SAI: {
+    JEREMIAH: {
       survival: 1,
     },
-    CEDREK: {
+    RIZO: {
       survival: 1,
       placement: 2,
     },
-    MARY: {
+    STEVEN: {
       survival: 1,
       votes: 1,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
       votes: 1,
     },
-    CHRISSY: {
+    SOPHI: {
       survival: 1,
       votes: 1,
     },
-    DAVID: {
-      survival: 1,
-      votes: 1,
-      individualImmunity: 2,
-    },
-    KYLE: {
-      survival: 1,
-      votes: 1,
-    },
-    MITCH: {
-      survival: 1,
-      votes: 1,
-    },
-    EVA: {
-      survival: 1,
-      votes: 1,
-    },
-    JOE: {
+    MC: {
       survival: 1,
       votes: 1,
       individualImmunity: 2,
     },
-    SHAUHIN: {
+    JASON: {
       survival: 1,
       votes: 1,
     },
-    STAR: {
+    JAWAN: {
+      survival: 1,
+      votes: 1,
+    },
+    JAKE: {
+      survival: 1,
+      votes: 1,
+    },
+    KRISTINA: {
+      survival: 1,
+      votes: 1,
+      individualImmunity: 2,
+    },
+    ANNIE: {
+      survival: 1,
+      votes: 1,
+    },
+    SOPHIE: {
       survival: 1,
       votes: 1,
     },
   },
   {
-    MARY: {
+    STEVEN: {
       survival: 1,
       votes: 1,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
       votes: 1,
     },
-    CHRISSY: {
+    SOPHI: {
       survival: 1,
       placement: 2,
     },
-    DAVID: {
+    MC: {
       survival: 1,
       votes: 1,
     },
-    KYLE: {
+    JASON: {
       survival: 1,
       votes: 1,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
       votes: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
       votes: 1,
       individualImmunity: 2,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
       votes: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       votes: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
     },
   },
   {
-    MARY: {
+    STEVEN: {
       survival: 1,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
       votes: 1,
     },
-    DAVID: {
+    MC: {
       survival: 1,
       placement: 2,
     },
-    KYLE: {
+    JASON: {
       survival: 1,
       votes: 1,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
       votes: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
       votes: 1,
       advantage: 1,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
       votes: 1,
       individualImmunity: 2,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       votes: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
     },
   },
   {
-    MARY: {
+    STEVEN: {
       survival: 1,
       votes: 1,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
     },
-    KYLE: {
-      survival: 1,
-      votes: 1,
-    },
-    MITCH: {
-      survival: 1,
-    },
-    EVA: {
+    JASON: {
       survival: 1,
       votes: 1,
     },
-    JOE: {
+    JAWAN: {
+      survival: 1,
+    },
+    JAKE: {
+      survival: 1,
+      votes: 1,
+    },
+    KRISTINA: {
       survival: 1,
       votes: 1,
       individualImmunity: 2,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       votes: 1,
     },
-    STAR: {
+    SOPHIE: {
       survival: 1,
       placement: 2,
     },
   },
   {
-    MARY: {
+    STEVEN: {
       survival: 1,
       placement: 2,
     },
-    KAMILLA: {
+    MATT: {
       survival: 1,
       votes: 1,
       individualImmunity: 2,
     },
-    KYLE: {
+    JASON: {
       survival: 1,
       votes: 1,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
       votes: 1,
     },
-    EVA: {
+    JAKE: {
       survival: 1,
       votes: 1,
     },
-    JOE: {
+    KRISTINA: {
       survival: 1,
       votes: 1,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       votes: 1,
     },
   },
   {
-    KAMILLA: {
+    MATT: {
       survival: 1,
     },
-    KYLE: {
-      survival: 1,
-      votes: 1,
-    },
-    MITCH: {
+    JASON: {
       survival: 1,
       votes: 1,
     },
-    EVA: {
+    JAWAN: {
       survival: 1,
       votes: 1,
     },
-    JOE: {
+    JAKE: {
+      survival: 1,
+      votes: 1,
+    },
+    KRISTINA: {
       survival: 1,
       votes: 1,
       individualImmunity: 2,
     },
-    SHAUHIN: {
+    ANNIE: {
       survival: 1,
       placement: 2,
     },
   },
   {
-    KAMILLA: {
+    MATT: {
       survival: 2,
       individualImmunity: 2,
       votes: 1,
       placement: 5,
     },
-    KYLE: {
+    JASON: {
       survival: 3,
       votes: 1,
       individualImmunity: 2,
       placement: 10,
     },
-    MITCH: {
+    JAWAN: {
       survival: 1,
       placement: 3,
     },
-    EVA: {
+    JAKE: {
       survival: 3,
       votes: 1,
       advantage: 1,
       placement: 9,
     },
-    JOE: {
+    KRISTINA: {
       survival: 3,
       votes: 1,
       placement: 7,

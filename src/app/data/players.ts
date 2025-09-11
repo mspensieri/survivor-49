@@ -1,24 +1,24 @@
 export type PlayerStatus = "active" | "eliminated" | "jury" | "winner";
 
 export enum PlayerKeys {
-  STEPHANIE = "STEPHANIE",
-  SHAUHIN = "SHAUHIN",
-  EVA = "EVA",
-  KYLE = "KYLE",
-  MITCH = "MITCH",
-  SAI = "SAI",
-  JOE = "JOE",
-  KAMILLA = "KAMILLA",
-  DAVID = "DAVID",
-  THOMAS = "THOMAS",
-  KEVIN = "KEVIN",
-  CEDREK = "CEDREK",
-  CHARITY = "CHARITY",
-  JUSTIN = "JUSTIN",
-  BIANCA = "BIANCA",
-  CHRISSY = "CHRISSY",
-  STAR = "STAR",
-  MARY = "MARY",
+  ALEX = "ALEX",
+  ANNIE = "ANNIE",
+  JAKE = "JAKE",
+  JASON = "JASON",
+  JAWAN = "JAWAN",
+  JEREMIAH = "JEREMIAH",
+  KRISTINA = "KRISTINA",
+  MATT = "MATT",
+  MC = "MC",
+  NATE = "NATE",
+  NICOLE = "NICOLE",
+  RIZO = "RIZO",
+  SAGE = "SAGE",
+  SAVANNAH = "SAVANNAH",
+  SHANNON = "SHANNON",
+  SOPHI = "SOPHI",
+  SOPHIE = "SOPHIE",
+  STEVEN = "STEVEN",
 }
 
 export type Player = {
@@ -29,110 +29,110 @@ export type Player = {
 };
 
 export const PLAYERS: Record<PlayerKeys, Player> = {
-  [PlayerKeys.STEPHANIE]: {
-    key: PlayerKeys.STEPHANIE,
-    name: "Stephanie",
+  [PlayerKeys.ALEX]: {
+    key: PlayerKeys.ALEX,
+    name: "Alex",
     status: "eliminated",
     eliminatedWeek: 0,
   },
-  [PlayerKeys.SHAUHIN]: {
-    key: PlayerKeys.SHAUHIN,
-    name: "Shauhin",
+  [PlayerKeys.ANNIE]: {
+    key: PlayerKeys.ANNIE,
+    name: "Annie",
     status: "jury",
     eliminatedWeek: 11,
   },
-  [PlayerKeys.EVA]: {
-    key: PlayerKeys.EVA,
-    name: "Eva",
+  [PlayerKeys.JAKE]: {
+    key: PlayerKeys.JAKE,
+    name: "Jake",
     status: "eliminated",
     eliminatedWeek: 12,
   },
-  [PlayerKeys.KYLE]: {
-    key: PlayerKeys.KYLE,
-    name: "Kyle",
+  [PlayerKeys.JASON]: {
+    key: PlayerKeys.JASON,
+    name: "Jason",
     status: "winner",
   },
-  [PlayerKeys.MITCH]: {
-    key: PlayerKeys.MITCH,
-    name: "Mitch",
+  [PlayerKeys.JAWAN]: {
+    key: PlayerKeys.JAWAN,
+    name: "Jawan",
     status: "jury",
     eliminatedWeek: 12,
   },
-  [PlayerKeys.SAI]: {
-    key: PlayerKeys.SAI,
-    name: "Sai",
+  [PlayerKeys.JEREMIAH]: {
+    key: PlayerKeys.JEREMIAH,
+    name: "Jeremiah",
     status: "eliminated",
     eliminatedWeek: 6,
   },
-  [PlayerKeys.JOE]: {
-    key: PlayerKeys.JOE,
-    name: "Joe",
+  [PlayerKeys.KRISTINA]: {
+    key: PlayerKeys.KRISTINA,
+    name: "Kristina",
     status: "eliminated",
     eliminatedWeek: 12,
   },
-  [PlayerKeys.KAMILLA]: {
-    key: PlayerKeys.KAMILLA,
-    name: "Kamilla",
+  [PlayerKeys.MATT]: {
+    key: PlayerKeys.MATT,
+    name: "Matt",
     status: "jury",
     eliminatedWeek: 12,
   },
-  [PlayerKeys.DAVID]: {
-    key: PlayerKeys.DAVID,
-    name: "David",
+  [PlayerKeys.MC]: {
+    key: PlayerKeys.MC,
+    name: "MC",
     status: "jury",
     eliminatedWeek: 8,
   },
-  [PlayerKeys.THOMAS]: {
-    key: PlayerKeys.THOMAS,
-    name: "Thomas",
+  [PlayerKeys.NATE]: {
+    key: PlayerKeys.NATE,
+    name: "Nate",
     status: "eliminated",
     eliminatedWeek: 3,
   },
-  [PlayerKeys.KEVIN]: {
-    key: PlayerKeys.KEVIN,
-    name: "Kevin",
+  [PlayerKeys.NICOLE]: {
+    key: PlayerKeys.NICOLE,
+    name: "Nicole",
     status: "eliminated",
     eliminatedWeek: 1,
   },
-  [PlayerKeys.CEDREK]: {
-    key: PlayerKeys.CEDREK,
-    name: "Cedrek",
+  [PlayerKeys.RIZO]: {
+    key: PlayerKeys.RIZO,
+    name: "Rizo",
     status: "jury",
     eliminatedWeek: 6,
   },
-  [PlayerKeys.CHARITY]: {
-    key: PlayerKeys.CHARITY,
-    name: "Charity",
+  [PlayerKeys.SAGE]: {
+    key: PlayerKeys.SAGE,
+    name: "Sage",
     status: "eliminated",
     eliminatedWeek: 5,
   },
-  [PlayerKeys.JUSTIN]: {
-    key: PlayerKeys.JUSTIN,
-    name: "Justin",
+  [PlayerKeys.SAVANNAH]: {
+    key: PlayerKeys.SAVANNAH,
+    name: "Savannah",
     status: "eliminated",
     eliminatedWeek: 2,
   },
-  [PlayerKeys.BIANCA]: {
-    key: PlayerKeys.BIANCA,
-    name: "Bianca",
+  [PlayerKeys.SHANNON]: {
+    key: PlayerKeys.SHANNON,
+    name: "Shannon",
     status: "eliminated",
     eliminatedWeek: 4,
   },
-  [PlayerKeys.CHRISSY]: {
-    key: PlayerKeys.CHRISSY,
-    name: "Chrissy",
+  [PlayerKeys.SOPHI]: {
+    key: PlayerKeys.SOPHI,
+    name: "Sophi",
     status: "jury",
     eliminatedWeek: 7,
   },
-  [PlayerKeys.STAR]: {
-    key: PlayerKeys.STAR,
-    name: "Star",
+  [PlayerKeys.SOPHIE]: {
+    key: PlayerKeys.SOPHIE,
+    name: "Sophie",
     status: "jury",
     eliminatedWeek: 9,
   },
-  [PlayerKeys.MARY]: {
-    key: PlayerKeys.MARY,
-    name: "Mary",
+  [PlayerKeys.STEVEN]: {
+    key: PlayerKeys.STEVEN,
+    name: "Steven",
     status: "jury",
     eliminatedWeek: 10,
   },
