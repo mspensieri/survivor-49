@@ -12,19 +12,19 @@ export type Points = {
 };
 
 export const airDates = [
-  "Feb 26",
-  "Mar 5",
-  "Mar 12",
-  "Mar 19",
-  "Mar 26",
-  "Apr 2",
-  "Apr 9",
-  "Apr 16",
-  "Apr 23",
-  "Apr 30",
-  "May 7",
-  "May 14",
-  "May 21",
+  "Sept 24",
+  "Oct 1",
+  "Oct 8",
+  "Oct 15",
+  "Oct 22",
+  "Oct 29",
+  "Nov 5",
+  "Nov 12",
+  "Nov 19",
+  "Nov 26",
+  "Dec 3",
+  "Dec 10",
+  "Dec 17",
 ];
 
 export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
@@ -578,61 +578,6 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     ANNIE: {
       survival: 1,
       votes: 1,
-    },
-  },
-  {
-    MATT: {
-      survival: 1,
-    },
-    JASON: {
-      survival: 1,
-      votes: 1,
-    },
-    JAWAN: {
-      survival: 1,
-      votes: 1,
-    },
-    JAKE: {
-      survival: 1,
-      votes: 1,
-    },
-    KRISTINA: {
-      survival: 1,
-      votes: 1,
-      individualImmunity: 2,
-    },
-    ANNIE: {
-      survival: 1,
-      placement: 2,
-    },
-  },
-  {
-    MATT: {
-      survival: 2,
-      individualImmunity: 2,
-      votes: 1,
-      placement: 5,
-    },
-    JASON: {
-      survival: 3,
-      votes: 1,
-      individualImmunity: 2,
-      placement: 10,
-    },
-    JAWAN: {
-      survival: 1,
-      placement: 3,
-    },
-    JAKE: {
-      survival: 3,
-      votes: 1,
-      advantage: 1,
-      placement: 9,
-    },
-    KRISTINA: {
-      survival: 3,
-      votes: 1,
-      placement: 7,
     },
   },
 ];
