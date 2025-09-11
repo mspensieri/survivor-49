@@ -10,11 +10,11 @@
 /*# sourceMappingURL=bootstrap.min.css.map */
 
 :root {
-    --link-color: rgb(223, 217, 194);
-    --link-color-dark: rgb(114, 111, 86);
-    --link-color-dark-transparent: rgba(114, 111, 86, 0.4);
-    --table-accent-color: rgb(196, 192, 167);
-    --background-color: rgb(16, 39, 80);
+    --link-color: #faece5;
+    --link-color-dark: #b0aca2;
+    --link-color-dark-transparent: rgba(114, 111, 86, 0.814);
+    --table-accent-color: #d7d2c6;
+    --background-color: rgb(2, 40, 105);
 
     --bs-body-bg: var(--background-color);
     --bs-link-color: var(--link-color);
