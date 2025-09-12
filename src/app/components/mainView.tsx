@@ -196,7 +196,7 @@ class MainView extends React.Component<{
           ></img>
           <Navbar className="bg-body-tertiary">
             <Navbar.Brand style={styles.poolTitle}>
-              Survivor Pool Season 48
+              Survivor Pool Season 49
             </Navbar.Brand>
           </Navbar>
           <Tabs
