@@ -39,7 +39,10 @@ function Page() {
   const [isSmallScreen, setIsSmallScreen] = useState(true);
   const [screenWidth, setScreenWidth] = useState(-1);
   const [selectedWeek, setSelectedWeek] = useState(currentWeek - 1);
-  const [front, setFront] = useState(true);
+  const [side, setSide] = useState(localStorage.getItem("lastSide") || "front");
+  const [activeTab, setActiveTab] = useState(
+    localStorage.getItem("lastActiveTab") || "leaderboard"
+  );
 
   useEffect(() => {
     setIsSmallScreen(global.window.innerWidth < 768);
@@ -57,19 +60,27 @@ function Page() {
     return <div></div>;
   }
 
+  function updateTabAndStore(tab: string) {
+    setActiveTab(tab);
+    localStorage.setItem("lastActiveTab", tab);
+  }
+
   return (
-    <div className={front ? "flip-card" : "flip-card upside-down"}>
+    <div className={side === "front" ? "flip-card" : "flip-card upside-down"}>
       <img
         src="torch.webp"
         alt="survivor logo"
         width={50}
         height={50}
         onClick={() => {
-          setFront(!front);
+          const newSide = side === "front" ? "back" : "front";
+
+          setSide(newSide);
+          localStorage.setItem("lastSide", newSide);
         }}
         style={{
           ...styles.torch,
-          ...(front ? styles.torchFront : styles.torchBack),
+          ...(side === "front" ? styles.torchFront : styles.torchBack),
         }}
       ></img>
       <div className="flip-card-inner">
@@ -83,8 +94,9 @@ function Page() {
             screenWidth={screenWidth}
             teamRankings={teamRankings}
             playerRankings={playerRankings}
-            active={front}
-            side={"front"}
+            active={side === "front"}
+            activeTab={activeTab}
+            setActiveTab={updateTabAndStore}
           ></MainView>
         </div>
         <div className={`flip-card-back ${creepster.className}`}>
@@ -97,8 +109,9 @@ function Page() {
             screenWidth={screenWidth}
             teamRankings={teamRankings}
             playerRankings={playerRankings}
-            active={!front}
-            side={"back"}
+            active={side === "back"}
+            activeTab={activeTab}
+            setActiveTab={updateTabAndStore}
           ></MainView>
         </div>
       </div>

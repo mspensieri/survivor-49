@@ -46,6 +46,7 @@ const styles: Record<string, React.CSSProperties> = {
     position: "absolute",
     width: "180px",
     margin: "auto",
+    left: 320,
     top: 10,
     filter: "var(--upside-down-image-filter)",
     transform: "var(--upside-down-image-transform)",
@@ -66,9 +67,10 @@ class MainView extends React.Component<{
   selectedWeek: number;
   onWeekSelected: (week: number) => void;
   active: boolean;
-  side: "front" | "back";
   teamRankings: Array<TeamRankings>;
   playerRankings: Array<PlayerRankings>;
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
 }> {
   render() {
     const {
@@ -81,7 +83,8 @@ class MainView extends React.Component<{
       teamRankings,
       playerRankings,
       active,
-      side,
+      activeTab,
+      setActiveTab,
     } = this.props;
 
     function SpoilersButton() {
@@ -189,7 +192,6 @@ class MainView extends React.Component<{
             style={{
               ...styles.logo,
               ...(screenWidth < 510 ? styles.logoSmall : {}),
-              ...(side === "back" ? { left: 220 } : { left: 320 }),
             }}
           ></img>
           <Navbar className="bg-body-tertiary">
@@ -198,8 +200,9 @@ class MainView extends React.Component<{
             </Navbar.Brand>
           </Navbar>
           <Tabs
-            defaultActiveKey="leaderboard"
-            id="uncontrolled-tab-example"
+            activeKey={activeTab}
+            onSelect={(k) => setActiveTab(k || "leaderboard")}
+            id="tabs-bar"
             variant="underline"
             className="mb-3"
             style={{ paddingLeft: "15px" }}
@@ -275,11 +278,9 @@ class MainView extends React.Component<{
                 </Tabs>
               )}
             </Tab>
-            {side === "front" && (
-              <Tab eventKey="rules" title="Rules" className="rules">
-                <Rules></Rules>
-              </Tab>
-            )}
+            <Tab eventKey="rules" title="Rules" className="rules">
+              <Rules></Rules>
+            </Tab>
           </Tabs>
         </Row>
       </Container>

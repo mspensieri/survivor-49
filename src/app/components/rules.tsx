@@ -9,6 +9,8 @@ const styles = {
   image: {
     width: "100%",
     maxWidth: "700px",
+    filter: "var(--upside-down-image-filter)",
+    transform: "var(--upside-down-image-transform)",
   },
 };
 
