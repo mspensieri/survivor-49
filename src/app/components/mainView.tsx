@@ -39,14 +39,16 @@ const styles: Record<string, React.CSSProperties> = {
     position: "absolute",
     zIndex: 1,
   },
+  spoilersButtonHidden: {
+    zIndex: -1,
+  },
   logo: {
     position: "absolute",
     width: "180px",
     margin: "auto",
-    left: 320,
     top: 10,
-    filter: "var(--logo-filter)",
-    transform: "var(--logo-transform)",
+    filter: "var(--upside-down-image-filter)",
+    transform: "var(--upside-down-image-transform)",
   },
   logoSmall: {
     display: "none",
@@ -63,6 +65,8 @@ class MainView extends React.Component<{
   screenWidth: number;
   selectedWeek: number;
   onWeekSelected: (week: number) => void;
+  active: boolean;
+  side: "front" | "back";
   teamRankings: Array<TeamRankings>;
   playerRankings: Array<PlayerRankings>;
 }> {
@@ -76,12 +80,17 @@ class MainView extends React.Component<{
       onWeekSelected,
       teamRankings,
       playerRankings,
+      active,
+      side,
     } = this.props;
 
     function SpoilersButton() {
       return (
         <button
-          style={styles.spoilersButton as any}
+          style={{
+            ...styles.spoilersButton,
+            ...(!active && styles.spoilersButtonHidden),
+          }}
           onClick={() => onRevealChange(true)}
         >
           Reveal Spoilers
@@ -180,6 +189,7 @@ class MainView extends React.Component<{
             style={{
               ...styles.logo,
               ...(screenWidth < 510 ? styles.logoSmall : {}),
+              ...(side === "back" ? { left: 220 } : { left: 320 }),
             }}
           ></img>
           <Navbar className="bg-body-tertiary">
@@ -265,9 +275,11 @@ class MainView extends React.Component<{
                 </Tabs>
               )}
             </Tab>
-            <Tab eventKey="rules" title="Rules" className="rules">
-              <Rules></Rules>
-            </Tab>
+            {side === "front" && (
+              <Tab eventKey="rules" title="Rules" className="rules">
+                <Rules></Rules>
+              </Tab>
+            )}
           </Tabs>
         </Row>
       </Container>

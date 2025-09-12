@@ -8,11 +8,11 @@ import { TeamRankings } from "../data/rankings";
 const styles = {
   indicatorGreen: {
     fontSize: "10pt",
-    color: "green",
+    color: "var(--green-indicator-color)",
   },
   indicatorRed: {
     fontSize: "10pt",
-    color: "red",
+    color: "var(--red-indicator-color)",
   },
   medals: {
     fontSize: "17pt",

@@ -13,11 +13,11 @@ const styles: Record<string, React.CSSProperties> = {
   badge: { width: "90px", position: "absolute", top: "16px", right: "16px" },
   indicatorGreen: {
     fontSize: "10pt",
-    color: "green",
+    color: "var(--green-indicator-color)",
   },
   indicatorRed: {
     fontSize: "10pt",
-    color: "red",
+    color: "var(--red-indicator-color)",
   },
   indicatorNeutral: {
     fontSize: "10pt",
@@ -26,6 +26,8 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: "12px",
     marginTop: "20px",
     marginLeft: "16px",
+    filter: "var(--upside-down-image-filter)",
+    transform: "var(--upside-down-image-transform)",
   },
   name: {
     fontSize: "25pt",

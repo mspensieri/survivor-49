@@ -83,6 +83,8 @@ function Page() {
             screenWidth={screenWidth}
             teamRankings={teamRankings}
             playerRankings={playerRankings}
+            active={front}
+            side={"front"}
           ></MainView>
         </div>
         <div className={`flip-card-back ${creepster.className}`}>
@@ -95,6 +97,8 @@ function Page() {
             screenWidth={screenWidth}
             teamRankings={teamRankings}
             playerRankings={playerRankings}
+            active={!front}
+            side={"back"}
           ></MainView>
         </div>
       </div>

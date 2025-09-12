@@ -11,7 +11,7 @@ import { TeamRankings } from "../data/rankings";
 const styles = {
   indicatorGreenLarge: {
     fontSize: "12pt",
-    color: "green",
+    color: "var(--green-indicator-color)",
   },
   cardNumber: {
     fontSize: "40pt",
@@ -32,13 +32,14 @@ const styles = {
     padding: "5px",
     paddingTop: "10px",
     marginRight: "5px",
+    color: "#212529",
   },
   medal: {
     fontSize: "17pt",
   },
   playerEliminated: {
     textDecoration: "line-through",
-    color: "red",
+    color: "var(--red-indicator-color)",
   },
   card: {
     minHeight: "270px",
