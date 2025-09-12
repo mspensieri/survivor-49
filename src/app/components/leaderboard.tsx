@@ -19,7 +19,7 @@ const styles = {
   },
   captain: {
     fontSize: "8pt",
-    color: "#84827a",
+    color: "var(--player-caption-color)",
   },
   row: {
     lineHeight: "1",
