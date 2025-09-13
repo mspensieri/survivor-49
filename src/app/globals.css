@@ -186,7 +186,7 @@
     --link-color: #dddddd;
     --link-color-dark: #7f7f7f;
     --link-color-dark-transparent: rgba(83, 83, 83, 0.814);
-    --player-caption-color: #bbbbbb;
+    --player-caption-color: #aaaaaa;
     --upside-down-image-filter: grayscale(1) saturate(200%);
     --upside-down-image-transform: scaleY(-1);
     --green-indicator-color: rgb(0, 200, 5);
@@ -207,7 +207,7 @@
     .table {
       --bs-table-color: #dddddd;
       --bs-table-striped-color: #dddddd;
-      --bs-table-striped-bg: #5e5e5e;
+      --bs-table-striped-bg: #505050;
       --bs-table-bg: var(--background-color);
       --bs-table-accent-bg: var(--table-accent-color);
     }
