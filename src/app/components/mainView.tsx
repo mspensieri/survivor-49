@@ -224,7 +224,7 @@ class MainView extends React.Component<{
                   id="week-selector-leaderboard"
                   className="mb-3"
                 >
-                  {[...Array(13)].map((_, index) => {
+                  {[...Array(airDates.length)].map((_, index) => {
                     const weekNumber = index;
                     const disabled = currentWeek < weekNumber + 1;
                     return (
@@ -261,7 +261,7 @@ class MainView extends React.Component<{
                   id="week-selector-players"
                   className="mb-3"
                 >
-                  {[...Array(13)].map((_, index) => {
+                  {[...Array(airDates.length)].map((_, index) => {
                     const weekNumber = index;
                     const disabled = currentWeek < weekNumber + 1;
                     return (

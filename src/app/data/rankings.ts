@@ -1,6 +1,11 @@
 import { Team, computeTeamScore } from "./teams";
 import { Player } from "./players";
-import { weeks, Points, computePlayerScore } from "./weeks";
+import {
+  weeks,
+  Points,
+  computePlayerScore,
+  computePlayerStatus,
+} from "./weeks";
 
 export type TeamScore = {
   team: Team;
@@ -8,11 +13,14 @@ export type TeamScore = {
   rank: number;
 };
 
+export type PlayerStatus = "active" | "eliminated" | "jury" | "winner";
+
 export type PlayerScore = {
   player: Player;
   total: number;
   points: Points;
   rank: number;
+  status: PlayerStatus;
 };
 
 export type TeamRankings = Array<TeamScore>;
@@ -86,6 +94,7 @@ function getWeeklyPlayerRankings(
           ),
           placement: computePlayerScore(player, weekNumber, "placement"),
         },
+        status: computePlayerStatus(player, weekNumber),
       };
     })
     .sort((a, b) => {

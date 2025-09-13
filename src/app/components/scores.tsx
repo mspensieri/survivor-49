@@ -3,9 +3,8 @@
 import Badge from "react-bootstrap/Badge";
 import React from "react";
 
-import { Player } from "../data/players";
 import { Points } from "../data/weeks";
-import { PlayerRankings } from "../data/rankings";
+import { PlayerRankings, PlayerScore } from "../data/rankings";
 import { Team } from "../data/teams";
 import { Accordion, Card, Col, Container, Row } from "react-bootstrap";
 
@@ -79,37 +78,32 @@ class Scores extends React.Component<{
   isSmallScreen: boolean;
   screenWidth: number;
 }> {
-  getBadge(player: Player, weekNumber: number) {
-    if (
-      typeof player.eliminatedWeek !== "undefined" &&
-      weekNumber >= player.eliminatedWeek
-    ) {
-      if (player.status === "eliminated") {
-        return (
-          <Badge bg="danger" style={styles.badge}>
-            Eliminated
-          </Badge>
-        );
-      } else if (player.status === "jury") {
-        return (
-          <Badge bg="info" style={styles.badge}>
-            Jury
-          </Badge>
-        );
-      }
-    } else if (player.status === "winner" && weekNumber === 12) {
+  getBadge(playerScore: PlayerScore, weekNumber: number) {
+    if (playerScore.status === "eliminated") {
+      return (
+        <Badge bg="danger" style={styles.badge}>
+          Eliminated
+        </Badge>
+      );
+    } else if (playerScore.status === "jury") {
+      return (
+        <Badge bg="info" style={styles.badge}>
+          Jury
+        </Badge>
+      );
+    } else if (playerScore.status === "winner") {
       return (
         <Badge bg="success" style={styles.badge}>
           Winner
         </Badge>
       );
+    } else {
+      return (
+        <Badge bg="secondary" style={styles.badge}>
+          Active
+        </Badge>
+      );
     }
-
-    return (
-      <Badge bg="secondary" style={styles.badge}>
-        Active
-      </Badge>
-    );
   }
 
   render() {
@@ -308,7 +302,7 @@ class Scores extends React.Component<{
                           }, 0)}
                           <span style={styles.units}> teams</span>
                         </div>
-                        {this.getBadge(thisWeekScore.player, weekNumber)}
+                        {this.getBadge(thisWeekScore, weekNumber)}
                       </div>
                     </Card>
                   </Col>

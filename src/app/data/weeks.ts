@@ -1,4 +1,5 @@
 import { PlayerKeys, Player } from "./players";
+import { PlayerStatus } from "./rankings";
 
 export type Points = {
   teamImmunity?: number;
@@ -27,8 +28,14 @@ export const airDates = [
   "Dec 17",
 ];
 
-export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
+interface Week extends Partial<Record<PlayerKeys, Points>> {
+  eliminated?: Array<PlayerKeys>;
+  jury?: Array<PlayerKeys>;
+}
+
+export const weeks: Array<Week> = [
   {
+    eliminated: [PlayerKeys.ALEX],
     JEREMIAH: {
       votes: 1,
       advantage: 1,
@@ -81,6 +88,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    eliminated: [PlayerKeys.NICOLE],
     JEREMIAH: {
       voteNullified: 1,
       survival: 1,
@@ -155,6 +163,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    eliminated: [PlayerKeys.SAVANNAH],
     JEREMIAH: {
       survival: 1,
     },
@@ -220,6 +229,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    eliminated: [PlayerKeys.NATE],
     JEREMIAH: {
       survival: 1,
       teamImmunity: 1,
@@ -280,6 +290,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    eliminated: [PlayerKeys.SHANNON],
     JEREMIAH: {
       survival: 1,
     },
@@ -336,6 +347,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    eliminated: [PlayerKeys.SAGE],
     JEREMIAH: {
       survival: 1,
       advantage: 1,
@@ -386,6 +398,8 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    eliminated: [PlayerKeys.JEREMIAH],
+    jury: [PlayerKeys.RIZO],
     JEREMIAH: {
       survival: 1,
     },
@@ -437,6 +451,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    jury: [PlayerKeys.SOPHI],
     STEVEN: {
       survival: 1,
       votes: 1,
@@ -479,6 +494,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    jury: [PlayerKeys.MC],
     STEVEN: {
       survival: 1,
     },
@@ -517,6 +533,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    jury: [PlayerKeys.SOPHIE],
     STEVEN: {
       survival: 1,
       votes: 1,
@@ -550,6 +567,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     },
   },
   {
+    jury: [PlayerKeys.STEVEN],
     STEVEN: {
       survival: 1,
       placement: 2,
@@ -578,6 +596,64 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     ANNIE: {
       survival: 1,
       votes: 1,
+    },
+  },
+  {
+    jury: [PlayerKeys.ANNIE],
+    MATT: {
+      survival: 1,
+    },
+    JASON: {
+      survival: 1,
+      votes: 1,
+    },
+    JAWAN: {
+      survival: 1,
+      votes: 1,
+    },
+    JAKE: {
+      survival: 1,
+      votes: 1,
+    },
+    KRISTINA: {
+      survival: 1,
+      votes: 1,
+      individualImmunity: 2,
+    },
+    ANNIE: {
+      survival: 1,
+      placement: 2,
+    },
+  },
+  {
+    eliminated: [PlayerKeys.JAKE, PlayerKeys.KRISTINA],
+    jury: [PlayerKeys.JAWAN, PlayerKeys.MATT],
+    MATT: {
+      survival: 2,
+      individualImmunity: 2,
+      votes: 1,
+      placement: 5,
+    },
+    JASON: {
+      survival: 3,
+      votes: 1,
+      individualImmunity: 2,
+      placement: 10,
+    },
+    JAWAN: {
+      survival: 1,
+      placement: 3,
+    },
+    JAKE: {
+      survival: 3,
+      votes: 1,
+      advantage: 1,
+      placement: 9,
+    },
+    KRISTINA: {
+      survival: 3,
+      votes: 1,
+      placement: 7,
     },
   },
 ];
@@ -614,4 +690,25 @@ export function getPlayerScore(
   scoreKey: keyof Points | "total"
 ) {
   return computePlayerScore(player, weekNumber, scoreKey) || "-";
+}
+
+export function computePlayerStatus(
+  player: Player,
+  weekNumber: number
+): PlayerStatus {
+  const precedingWeeks = weeks.slice(0, weekNumber + 1);
+  const eliminated = precedingWeeks.some((week) =>
+    week.eliminated?.includes(player.key)
+  );
+  const inJury = precedingWeeks.some((week) => week.jury?.includes(player.key));
+
+  if (eliminated) {
+    return "eliminated";
+  } else if (inJury) {
+    return "jury";
+  } else if (weekNumber === airDates.length - 1) {
+    return "winner";
+  } else {
+    return "active";
+  }
 }

@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import React from "react";
 
-import { computePlayerScore } from "../data/weeks";
+import { computePlayerScore, computePlayerStatus } from "../data/weeks";
 import { TeamRankings } from "../data/rankings";
 
 const styles: Record<string, React.CSSProperties> = {
@@ -116,6 +116,8 @@ class Teams extends React.Component<{
                         computePlayerScore(a, currentWeek, "total")
                     )
                     .map((player, j) => {
+                      const status = computePlayerStatus(player, currentWeek);
+
                       return (
                         <Card.Text key={j}>
                           {player === teamScore.team.winner ? (
@@ -123,7 +125,7 @@ class Teams extends React.Component<{
                           ) : (
                             ""
                           )}
-                          {typeof player.eliminatedWeek !== "undefined" ? (
+                          {["eliminated", "jury"].includes(status) ? (
                             <span style={styles.playerEliminated}>
                               {player.name}
                             </span>
