@@ -8,7 +8,7 @@ import React from "react";
 import { computePlayerScore } from "../data/weeks";
 import { TeamRankings } from "../data/rankings";
 
-const styles = {
+const styles: Record<string, React.CSSProperties> = {
   indicatorGreenLarge: {
     fontSize: "12pt",
     color: "var(--green-indicator-color)",
@@ -16,10 +16,11 @@ const styles = {
   cardNumber: {
     fontSize: "40pt",
     marginTop: "-5px",
+    filter: "var(--upside-down-image-filter)",
   },
   accolades: {
-    textAlign: "center" as any,
-    position: "absolute" as any,
+    textAlign: "center",
+    position: "absolute",
     right: "10px",
     top: "20px",
     fontSize: "12pt",
@@ -27,15 +28,15 @@ const styles = {
     fontWeight: "400",
   },
   medalContainer: {
-    backgroundColor: "#facf8b",
+    backgroundColor: "var(--medal-background-color)",
     borderRadius: "5px",
     padding: "5px",
     paddingTop: "10px",
     marginRight: "5px",
-    color: "#212529",
   },
   medal: {
     fontSize: "17pt",
+    filter: "var(--upside-down-image-filter)",
   },
   playerEliminated: {
     textDecoration: "line-through",
@@ -52,13 +53,6 @@ const styles = {
     fontSize: "17pt",
     paddingBottom: "5px",
     marginBottom: "20px",
-  },
-  captain: {
-    marginTop: "-5px",
-    marginBottom: "20px",
-    fontWeight: "400",
-    fontSize: "12pt",
-    color: "#84827a",
   },
 };
 
@@ -115,9 +109,6 @@ class Teams extends React.Component<{
                     {teamScore.team.name}
                   </Card.Title>
                   <hr />
-                  {/* <Card.Title style={styles.captain}>
-                    {teamScore.team.captain}
-                  </Card.Title>  */}
                   {...[...teamScore.team.players]
                     .sort(
                       (a, b) =>

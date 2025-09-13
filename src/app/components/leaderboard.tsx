@@ -16,6 +16,7 @@ const styles = {
   },
   medals: {
     fontSize: "17pt",
+    filter: "var(--upside-down-image-filter)",
   },
   captain: {
     fontSize: "8pt",

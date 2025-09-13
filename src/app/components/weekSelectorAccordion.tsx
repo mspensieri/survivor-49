@@ -18,7 +18,7 @@ const styles = {
   },
   selectedWeekButton: {
     backgroundColor: "var(--table-accent-color)",
-    color: "black",
+    color: "var(--bs-body-color)",
     border: "none",
     width: "100%",
   },
