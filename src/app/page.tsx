@@ -8,9 +8,12 @@ import { getTeamRankings, getPlayerRankings } from "./data/rankings";
 import { teams } from "./data/teams";
 import MainView from "./components/mainView";
 import { Inter, Creepster } from "next/font/google";
+import * as storage from "./utils/storage";
 
 const inter = Inter({ subsets: ["latin"] });
 const creepster = Creepster({ weight: "400", subsets: ["latin"] });
+const initialSide = storage.getItem("lastSide") || "front";
+const initialActiveTab = storage.getItem("lastActiveTab") || "leaderboard";
 
 const currentWeek = weeks.length;
 const teamRankings = getTeamRankings(teams);
@@ -39,10 +42,8 @@ function Page() {
   const [isSmallScreen, setIsSmallScreen] = useState(true);
   const [screenWidth, setScreenWidth] = useState(-1);
   const [selectedWeek, setSelectedWeek] = useState(currentWeek - 1);
-  const [side, setSide] = useState(localStorage.getItem("lastSide") || "front");
-  const [activeTab, setActiveTab] = useState(
-    localStorage.getItem("lastActiveTab") || "leaderboard"
-  );
+  const [side, setSide] = useState(initialSide);
+  const [activeTab, setActiveTab] = useState(initialActiveTab);
 
   useEffect(() => {
     setIsSmallScreen(global.window.innerWidth < 768);
@@ -62,7 +63,7 @@ function Page() {
 
   function updateTabAndStore(tab: string) {
     setActiveTab(tab);
-    localStorage.setItem("lastActiveTab", tab);
+    storage.setItem("lastActiveTab", tab);
   }
 
   return (
@@ -76,7 +77,7 @@ function Page() {
           const newSide = side === "front" ? "back" : "front";
 
           setSide(newSide);
-          localStorage.setItem("lastSide", newSide);
+          storage.setItem("lastSide", newSide);
         }}
         style={{
           ...styles.torch,

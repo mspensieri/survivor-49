@@ -52,18 +52,18 @@ class Leaderboard extends React.Component<{
               if (lastWeekScore) {
                 if (thisWeekScore.total > lastWeekScore.total) {
                   return (
-                    <td>
+                    <>
                       {thisWeekScore.total}{" "}
                       <span style={styles.indicatorGreen}>
                         (+{thisWeekScore.total - lastWeekScore.total})
                       </span>
-                    </td>
+                    </>
                   );
                 } else {
-                  return <td>{thisWeekScore.total || "-"}</td>;
+                  return <>{thisWeekScore.total || "-"}</>;
                 }
               } else {
-                return <td>{thisWeekScore.total || "-"}</td>;
+                return <>{thisWeekScore.total || "-"}</>;
               }
             }
 
