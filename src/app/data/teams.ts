@@ -1,17 +1,6 @@
-import { Player, PLAYERS } from "./players";
-import { computePlayerScore } from "./weeks";
-
-export type Team = {
-  name: string;
-  captain?: string;
-  accolades?: {
-    first?: Array<number>;
-    second?: Array<number>;
-    third?: Array<number>;
-  };
-  winner: Player;
-  players: Array<Player>;
-};
+import { PLAYERS } from "./players";
+import { Team } from "./types";
+import { computePlayerScore, computeUpsideDownPlayerScore } from "./weeks";
 
 const {
   ALEX,
@@ -338,6 +327,16 @@ export function computeTeamScore(team: Team, weekNumber: number) {
 
   for (const player of team.players) {
     score += computePlayerScore(player, weekNumber, "total");
+  }
+
+  return score;
+}
+
+export function computeUpsideDownTeamScore(team: Team, weekNumber: number) {
+  let score = 0;
+
+  for (const player of team.players) {
+    score += computeUpsideDownPlayerScore(player, weekNumber);
   }
 
   return score;

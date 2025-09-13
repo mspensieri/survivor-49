@@ -1,28 +1,4 @@
-export enum PlayerKeys {
-  ALEX = "ALEX",
-  ANNIE = "ANNIE",
-  JAKE = "JAKE",
-  JASON = "JASON",
-  JAWAN = "JAWAN",
-  JEREMIAH = "JEREMIAH",
-  KRISTINA = "KRISTINA",
-  MATT = "MATT",
-  MC = "MC",
-  NATE = "NATE",
-  NICOLE = "NICOLE",
-  RIZO = "RIZO",
-  SAGE = "SAGE",
-  SAVANNAH = "SAVANNAH",
-  SHANNON = "SHANNON",
-  SOPHI = "SOPHI",
-  SOPHIE = "SOPHIE",
-  STEVEN = "STEVEN",
-}
-
-export type Player = {
-  key: PlayerKeys;
-  name: string;
-};
+import { Player, PlayerKeys } from "./types";
 
 export const PLAYERS: Record<PlayerKeys, Player> = {
   [PlayerKeys.ALEX]: {

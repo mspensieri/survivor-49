@@ -9,6 +9,10 @@ import { teams } from "./data/teams";
 import MainView from "./components/mainView";
 import { Inter, Creepster } from "next/font/google";
 import * as storage from "./utils/storage";
+import {
+  getUpsideDownPlayerRankings,
+  getUpsideDownTeamRankings,
+} from "./data/upsideDownRankings";
 
 const inter = Inter({ subsets: ["latin"] });
 const creepster = Creepster({ weight: "400", subsets: ["latin"] });
@@ -19,6 +23,8 @@ const initialShakeState = storage.getItem("shakeState") || "enabled";
 const currentWeek = weeks.length;
 const teamRankings = getTeamRankings(teams);
 const playerRankings = getPlayerRankings(players);
+const upsideDownTeamRankings = getUpsideDownTeamRankings(teams);
+const upsideDownPlayerRankings = getUpsideDownPlayerRankings(players);
 
 const styles: Record<string, React.CSSProperties> = {
   torchContainer: {
@@ -129,8 +135,8 @@ function Page() {
             onRevealChange={setReveal}
             isSmallScreen={isSmallScreen}
             screenWidth={screenWidth}
-            teamRankings={teamRankings}
-            playerRankings={playerRankings}
+            teamRankings={upsideDownTeamRankings}
+            upsideDownPlayerRankings={upsideDownPlayerRankings}
             active={side === "back"}
             activeTab={activeTab}
             setActiveTab={updateTabAndStore}

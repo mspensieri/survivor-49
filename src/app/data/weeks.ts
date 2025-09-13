@@ -1,16 +1,10 @@
-import { PlayerKeys, Player } from "./players";
-import { PlayerStatus } from "./rankings";
-
-export type Points = {
-  teamImmunity?: number;
-  individualImmunity?: number;
-  advantage?: number;
-  idolFound?: number;
-  voteNullified?: number;
-  placement?: number;
-  survival?: number;
-  votes?: number;
-};
+import {
+  Player,
+  PlayerKeys,
+  PlayerStatus,
+  Points,
+  UpsideDownAchievement,
+} from "./types";
 
 export const airDates = [
   "Sept 24",
@@ -40,6 +34,16 @@ export const weeks: Array<Week> = [
       votes: 1,
       advantage: 1,
       idolFound: 2,
+      upsideDown: [
+        {
+          reason: "Flipped the script",
+          points: 5,
+        },
+        {
+          reason: "Played a hidden immunity idol",
+          points: 10,
+        },
+      ],
     },
     NICOLE: {
       votes: 1,
@@ -93,6 +97,16 @@ export const weeks: Array<Week> = [
       voteNullified: 1,
       survival: 1,
       votes: 1,
+      upsideDown: [
+        {
+          reason: "Flipped the script",
+          points: 1,
+        },
+        {
+          reason: "Sobbed like a baby",
+          points: 10,
+        },
+      ],
     },
     NICOLE: {
       survival: 1,
@@ -160,6 +174,16 @@ export const weeks: Array<Week> = [
       survival: 1,
       teamImmunity: 1,
       advantage: 1,
+      upsideDown: [
+        {
+          reason: "Flipped the script",
+          points: 5,
+        },
+        {
+          reason: "Played a hidden immunity idol",
+          points: 10,
+        },
+      ],
     },
   },
   {
@@ -661,7 +685,7 @@ export const weeks: Array<Week> = [
 export function computePlayerScore(
   player: Player,
   weekNumber: number,
-  scoreKey: keyof Points | "total"
+  scoreKey: keyof Omit<Points, "upsideDown"> | "total"
 ) {
   let score = 0;
 
@@ -684,12 +708,43 @@ export function computePlayerScore(
   return score;
 }
 
-export function getPlayerScore(
+export function computeUpsideDownPlayerScore(
   player: Player,
-  weekNumber: number,
-  scoreKey: keyof Points | "total"
+  weekNumber: number
 ) {
-  return computePlayerScore(player, weekNumber, scoreKey) || "-";
+  const achievements = getPlayerUpsideDownAchievements(player, weekNumber);
+
+  return achievements.reduce(
+    (total, achievement) => total + achievement.points,
+    0
+  );
+}
+
+export function getPlayerUpsideDownAchievements(
+  player: Player,
+  weekNumber: number
+): Array<UpsideDownAchievement> {
+  let achievements: Array<UpsideDownAchievement> = [];
+
+  for (const week of weeks.slice(0, weekNumber + 1)) {
+    const achievementsThisWeek = week[player.key]?.upsideDown || [];
+
+    for (const achievement of achievementsThisWeek) {
+      const alreadyEarnedAchievement = achievements.find(
+        (a) => a.reason === achievement.reason
+      );
+
+      if (alreadyEarnedAchievement) {
+        alreadyEarnedAchievement.points += achievement.points;
+      } else {
+        achievements.push({
+          ...achievement,
+        });
+      }
+    }
+  }
+
+  return achievements;
 }
 
 export function computePlayerStatus(

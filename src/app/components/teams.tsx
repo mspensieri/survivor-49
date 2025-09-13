@@ -6,7 +6,9 @@ import Row from "react-bootstrap/Row";
 import React from "react";
 
 import { computePlayerScore, computePlayerStatus } from "../data/weeks";
-import { TeamRankings } from "../data/rankings";
+import { PlayerRankings, TeamRankings } from "../data/rankings";
+import { UpsideDownPlayerRankings } from "../data/upsideDownRankings";
+import { Player } from "../data/types";
 
 const styles: Record<string, React.CSSProperties> = {
   indicatorGreenLarge: {
@@ -58,10 +60,15 @@ const styles: Record<string, React.CSSProperties> = {
 
 class Teams extends React.Component<{
   thisWeekRankings: TeamRankings;
+  thisWeekPlayerRankings: PlayerRankings | UpsideDownPlayerRankings;
   currentWeek: number;
 }> {
   render() {
-    const { thisWeekRankings = [], currentWeek } = this.props;
+    const {
+      thisWeekRankings = [],
+      thisWeekPlayerRankings = [],
+      currentWeek,
+    } = this.props;
 
     return (
       <Row>
@@ -112,11 +119,15 @@ class Teams extends React.Component<{
                   {...[...teamScore.team.players]
                     .sort(
                       (a, b) =>
-                        computePlayerScore(b, currentWeek, "total") -
-                        computePlayerScore(a, currentWeek, "total")
+                        thisWeekPlayerRankings.find((r) => r.player === b)!
+                          .total -
+                        thisWeekPlayerRankings.find((r) => r.player === a)!
+                          .total
                     )
-                    .map((player, j) => {
-                      const status = computePlayerStatus(player, currentWeek);
+                    .map((player: Player, j) => {
+                      const playerScore = thisWeekPlayerRankings.find(
+                        (r) => r.player === player
+                      )!;
 
                       return (
                         <Card.Text key={j}>
@@ -125,14 +136,16 @@ class Teams extends React.Component<{
                           ) : (
                             ""
                           )}
-                          {["eliminated", "jury"].includes(status) ? (
+                          {["eliminated", "jury"].includes(
+                            playerScore.status
+                          ) ? (
                             <span style={styles.playerEliminated}>
                               {player.name}
                             </span>
                           ) : (
                             player.name
                           )}{" "}
-                          ({computePlayerScore(player, currentWeek, "total")})
+                          ({playerScore.total || 0})
                         </Card.Text>
                       );
                     })}

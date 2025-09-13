@@ -21,6 +21,7 @@ import Rules from "../components/rules";
 import WeekSelectorAccordion from "../components/weekSelectorAccordion";
 import React from "react";
 import { Container } from "react-bootstrap";
+import { UpsideDownPlayerRankings } from "../data/upsideDownRankings";
 
 const currentWeek = weeks.length;
 
@@ -68,7 +69,8 @@ class MainView extends React.Component<{
   onWeekSelected: (week: number) => void;
   active: boolean;
   teamRankings: Array<TeamRankings>;
-  playerRankings: Array<PlayerRankings>;
+  playerRankings?: Array<PlayerRankings>;
+  upsideDownPlayerRankings?: Array<UpsideDownPlayerRankings>;
   activeTab: string;
   setActiveTab: (tab: string) => void;
 }> {
@@ -82,6 +84,7 @@ class MainView extends React.Component<{
       onWeekSelected,
       teamRankings,
       playerRankings,
+      upsideDownPlayerRankings,
       active,
       activeTab,
       setActiveTab,
@@ -136,8 +139,6 @@ class MainView extends React.Component<{
           <SpoilerMask>
             <Scores
               thisWeekRankings={getPlayerRankings(players)[0]}
-              lastWeekRankings={getPlayerRankings(players)[0]}
-              weekNumber={0}
               teams={teams}
               isSmallScreen={isSmallScreen}
               screenWidth={screenWidth}
@@ -147,9 +148,12 @@ class MainView extends React.Component<{
       } else {
         return (
           <Scores
-            thisWeekRankings={playerRankings[weekNumber]}
-            lastWeekRankings={playerRankings[weekNumber - 1]}
-            weekNumber={weekNumber}
+            thisWeekRankings={playerRankings?.[weekNumber]}
+            lastWeekRankings={playerRankings?.[weekNumber - 1]}
+            thisWeekUpsideDownRankings={upsideDownPlayerRankings?.[weekNumber]}
+            lastWeekUpsideDownRankings={
+              upsideDownPlayerRankings?.[weekNumber - 1]
+            }
             teams={teams}
             isSmallScreen={isSmallScreen}
             screenWidth={screenWidth}
@@ -163,6 +167,11 @@ class MainView extends React.Component<{
         return (
           <Teams
             thisWeekRankings={teamRankings[currentWeek - 1]}
+            thisWeekPlayerRankings={
+              playerRankings?.[currentWeek - 1] ||
+              upsideDownPlayerRankings?.[currentWeek - 1] ||
+              []
+            }
             currentWeek={currentWeek}
           ></Teams>
         );
@@ -171,6 +180,11 @@ class MainView extends React.Component<{
           <SpoilerMask>
             <Teams
               thisWeekRankings={getTeamRankings(fakeTeams)[0]}
+              thisWeekPlayerRankings={
+                playerRankings?.[currentWeek - 1] ||
+                upsideDownPlayerRankings?.[currentWeek - 1] ||
+                []
+              }
               currentWeek={currentWeek}
             ></Teams>
           </SpoilerMask>

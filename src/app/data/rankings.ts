@@ -1,27 +1,6 @@
-import { Team, computeTeamScore } from "./teams";
-import { Player } from "./players";
-import {
-  weeks,
-  Points,
-  computePlayerScore,
-  computePlayerStatus,
-} from "./weeks";
-
-export type TeamScore = {
-  team: Team;
-  total: number;
-  rank: number;
-};
-
-export type PlayerStatus = "active" | "eliminated" | "jury" | "winner";
-
-export type PlayerScore = {
-  player: Player;
-  total: number;
-  points: Points;
-  rank: number;
-  status: PlayerStatus;
-};
+import { computeTeamScore } from "./teams";
+import { weeks, computePlayerScore, computePlayerStatus } from "./weeks";
+import { Player, PlayerScore, Team, TeamScore } from "./types";
 
 export type TeamRankings = Array<TeamScore>;
 export type PlayerRankings = Array<PlayerScore>;
