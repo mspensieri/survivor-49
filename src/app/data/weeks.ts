@@ -36,11 +36,11 @@ export const weeks: Array<Week> = [
       idolFound: 2,
       upsideDown: [
         {
-          reason: "Flipped the script",
+          reason: "Mental breakdown",
           points: 5,
         },
         {
-          reason: "Played a hidden immunity idol",
+          reason: "Lost their idol",
           points: 10,
         },
       ],
@@ -97,16 +97,6 @@ export const weeks: Array<Week> = [
       voteNullified: 1,
       survival: 1,
       votes: 1,
-      upsideDown: [
-        {
-          reason: "Flipped the script",
-          points: 1,
-        },
-        {
-          reason: "Sobbed like a baby",
-          points: 10,
-        },
-      ],
     },
     NICOLE: {
       survival: 1,
@@ -118,6 +108,16 @@ export const weeks: Array<Week> = [
     SAVANNAH: {
       survival: 1,
       votes: 1,
+      upsideDown: [
+        {
+          reason: "Voted out unanimously",
+          points: 1,
+        },
+        {
+          reason: "Sobbed like a baby",
+          points: 10,
+        },
+      ],
     },
     STEVEN: {
       survival: 1,
@@ -176,11 +176,11 @@ export const weeks: Array<Week> = [
       advantage: 1,
       upsideDown: [
         {
-          reason: "Flipped the script",
+          reason: "Medivac'd",
           points: 5,
         },
         {
-          reason: "Played a hidden immunity idol",
+          reason: "Caused a scene at tribal",
           points: 10,
         },
       ],
@@ -197,6 +197,16 @@ export const weeks: Array<Week> = [
     },
     SAVANNAH: {
       survival: 1,
+      upsideDown: [
+        {
+          reason: "Face full of mud",
+          points: 1,
+        },
+        {
+          reason: "Sobbed like a baby",
+          points: 10,
+        },
+      ],
     },
     STEVEN: {
       survival: 1,

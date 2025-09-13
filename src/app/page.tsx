@@ -7,7 +7,7 @@ import { weeks } from "./data/weeks";
 import { getTeamRankings, getPlayerRankings } from "./data/rankings";
 import { teams } from "./data/teams";
 import MainView from "./components/mainView";
-import { Inter, Creepster } from "next/font/google";
+import { Inter, Metal_Mania } from "next/font/google";
 import * as storage from "./utils/storage";
 import {
   getUpsideDownPlayerRankings,
@@ -15,7 +15,8 @@ import {
 } from "./data/upsideDownRankings";
 
 const inter = Inter({ subsets: ["latin"] });
-const creepster = Creepster({ weight: "400", subsets: ["latin"] });
+const metalMania = Metal_Mania({ weight: "400", subsets: ["latin"] });
+
 const initialSide = storage.getItem("lastSide") || "front";
 const initialActiveTab = storage.getItem("lastActiveTab") || "leaderboard";
 const initialShakeState = storage.getItem("shakeState") || "enabled";
@@ -127,7 +128,7 @@ function Page() {
             setActiveTab={updateTabAndStore}
           ></MainView>
         </div>
-        <div className={`flip-card-back ${creepster.className}`}>
+        <div className={`flip-card-back ${metalMania.className}`}>
           <MainView
             selectedWeek={selectedWeek}
             onWeekSelected={setSelectedWeek}

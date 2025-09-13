@@ -5,12 +5,7 @@ import React from "react";
 
 import { PlayerRankings } from "../data/rankings";
 import { Accordion, Card, Col, Container, Row } from "react-bootstrap";
-import {
-  PlayerScore,
-  Points,
-  Team,
-  UpsideDownPlayerScore,
-} from "../data/types";
+import { PlayerScore, Team, UpsideDownPlayerScore } from "../data/types";
 import { UpsideDownPlayerRankings } from "../data/upsideDownRankings";
 
 const styles: Record<string, React.CSSProperties> = {
@@ -72,6 +67,9 @@ const styles: Record<string, React.CSSProperties> = {
     borderTopLeftRadius: "0px",
     borderTop: "0px",
     marginTop: "0px",
+  },
+  scoreLabel: {
+    color: "var(--score-label-color-override)",
   },
 };
 
@@ -247,7 +245,7 @@ class Scores extends React.Component<{
 
           return (
             <React.Fragment key={index}>
-              <strong>{a.reason}: </strong>
+              <span style={styles.scoreLabel}>{a.reason}: </span>
               {this.getScoreElement(
                 a.points,
                 lastWeekScore
@@ -348,16 +346,20 @@ class Scores extends React.Component<{
                           ></img>
                           <div style={styles.details}>
                             <br />
-                            <strong>Rank: </strong>
+                            <strong style={styles.scoreLabel}>Rank: </strong>
                             {rank}
                             <br />
-                            <strong>Total: </strong>{" "}
+                            <strong style={styles.scoreLabel}>
+                              Total:{" "}
+                            </strong>{" "}
                             {this.getScoreElement(
                               thisWeekScore.total,
                               lastWeekScore?.total
                             )}
                             <br />
-                            <strong>Popularity: </strong>
+                            <strong style={styles.scoreLabel}>
+                              Popularity:{" "}
+                            </strong>
                             {teams.reduce((acc, curr) => {
                               return curr.players.includes(thisWeekScore.player)
                                 ? acc + 1

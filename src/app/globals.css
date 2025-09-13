@@ -186,7 +186,7 @@
     --link-color: #dddddd;
     --link-color-dark: #7f7f7f;
     --link-color-dark-transparent: rgba(83, 83, 83, 0.814);
-    --player-caption-color: #aaaaaa;
+    --player-caption-color: #bbbbbb;
     --upside-down-image-filter: grayscale(1) saturate(200%);
     --upside-down-image-transform: scaleY(-1);
     --green-indicator-color: rgb(0, 200, 5);
@@ -198,6 +198,8 @@
     --bs-link-color: var(--link-color);
     --bs-tertiary-bg-rgb: var(--background-color);
     --bs-table-border-color: var(--bs-link-color);
+
+    --score-label-color-override: var(--player-caption-color);
 
     --background-color: #1c1c1c;
     background-color: var(--background-color);
