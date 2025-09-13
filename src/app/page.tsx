@@ -14,19 +14,23 @@ const inter = Inter({ subsets: ["latin"] });
 const creepster = Creepster({ weight: "400", subsets: ["latin"] });
 const initialSide = storage.getItem("lastSide") || "front";
 const initialActiveTab = storage.getItem("lastActiveTab") || "leaderboard";
+const initialShakeState = storage.getItem("shakeState") || "enabled";
 
 const currentWeek = weeks.length;
 const teamRankings = getTeamRankings(teams);
 const playerRankings = getPlayerRankings(players);
 
 const styles: Record<string, React.CSSProperties> = {
-  torch: {
+  torchContainer: {
     position: "absolute",
-    right: 15,
-    top: 15,
+    right: 20,
+    top: 20,
     zIndex: 20,
     cursor: "pointer",
+  },
+  torch: {
     transition: "transform 0.4s",
+    cursor: "pointer",
   },
   torchFront: {
     transform: "rotate(0deg)",
@@ -44,8 +48,17 @@ function Page() {
   const [selectedWeek, setSelectedWeek] = useState(currentWeek - 1);
   const [side, setSide] = useState(initialSide);
   const [activeTab, setActiveTab] = useState(initialActiveTab);
+  const [shakeState, setShakeState] = useState(initialShakeState);
 
   useEffect(() => {
+    if (initialShakeState === "enabled") {
+      setShakeState("disabled");
+
+      setTimeout(() => {
+        setShakeState("enabled");
+      }, 3000);
+    }
+
     setIsSmallScreen(global.window.innerWidth < 768);
     setScreenWidth(global.window.innerWidth);
 
@@ -68,22 +81,30 @@ function Page() {
 
   return (
     <div className={side === "front" ? "flip-card" : "flip-card upside-down"}>
-      <img
-        src="torch.webp"
-        alt="survivor logo"
-        width={50}
-        height={50}
+      <div
+        className={shakeState === "enabled" ? "jump-shake" : ""}
+        style={styles.torchContainer}
         onClick={() => {
+          setShakeState("disabled");
+          storage.setItem("shakeState", "disabled");
+
           const newSide = side === "front" ? "back" : "front";
 
           setSide(newSide);
           storage.setItem("lastSide", newSide);
         }}
-        style={{
-          ...styles.torch,
-          ...(side === "front" ? styles.torchFront : styles.torchBack),
-        }}
-      ></img>
+      >
+        <img
+          src="torch.webp"
+          alt="survivor logo"
+          width={50}
+          height={50}
+          style={{
+            ...styles.torch,
+            ...(side === "front" ? styles.torchFront : styles.torchBack),
+          }}
+        ></img>
+      </div>
       <div className="flip-card-inner">
         <div className={`flip-card-front ${inter.className}`}>
           <MainView
