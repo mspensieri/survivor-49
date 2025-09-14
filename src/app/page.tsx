@@ -4,15 +4,14 @@ import { useEffect, useState } from "react";
 
 import { players } from "./data/players";
 import { weeks } from "./data/weeks";
-import { getTeamRankings, getPlayerRankings } from "./data/rankings";
+import {
+  getTeamRankings,
+  getPlayerRankings,
+} from "./providers/rankingsProvider";
 import { teams } from "./data/teams";
 import MainView from "./components/mainView";
 import { Inter, Metal_Mania } from "next/font/google";
 import * as storage from "./utils/storage";
-import {
-  getUpsideDownPlayerRankings,
-  getUpsideDownTeamRankings,
-} from "./data/upsideDownRankings";
 
 const inter = Inter({ subsets: ["latin"] });
 const metalMania = Metal_Mania({ weight: "400", subsets: ["latin"] });
@@ -22,10 +21,10 @@ const initialActiveTab = storage.getItem("lastActiveTab") || "leaderboard";
 const initialShakeState = storage.getItem("shakeState") || "enabled";
 
 const currentWeek = weeks.length;
-const teamRankings = getTeamRankings(teams);
-const playerRankings = getPlayerRankings(players);
-const upsideDownTeamRankings = getUpsideDownTeamRankings(teams);
-const upsideDownPlayerRankings = getUpsideDownPlayerRankings(players);
+const { standard: teamRankings, upsideDown: upsideDownTeamRankings } =
+  getTeamRankings(teams);
+const { standard: playerRankings, upsideDown: upsideDownPlayerRankings } =
+  getPlayerRankings(players);
 
 const styles: Record<string, React.CSSProperties> = {
   torchContainer: {

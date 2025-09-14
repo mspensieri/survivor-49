@@ -120,8 +120,8 @@ class MainView extends React.Component<{
         return (
           <SpoilerMask>
             <Leaderboard
-              thisWeekRankings={getTeamRankings(fakeTeams)[0]}
-              lastWeekRankings={getTeamRankings(fakeTeams)[0]}
+              thisWeekRankings={getTeamRankings(fakeTeams).standard[0]}
+              lastWeekRankings={getTeamRankings(fakeTeams).standard[0]}
             ></Leaderboard>
           </SpoilerMask>
         );
@@ -140,7 +140,7 @@ class MainView extends React.Component<{
         return (
           <SpoilerMask>
             <Scores
-              thisWeekRankings={getPlayerRankings(players)[0]}
+              thisWeekRankings={getPlayerRankings(players).standard[0]}
               teams={teams}
               isSmallScreen={isSmallScreen}
               screenWidth={screenWidth}
@@ -180,7 +180,7 @@ class MainView extends React.Component<{
         return (
           <SpoilerMask>
             <Teams
-              thisWeekRankings={getTeamRankings(fakeTeams)[0]}
+              thisWeekRankings={getTeamRankings(fakeTeams).standard[0]}
               thisWeekPlayerRankings={
                 playerRankings?.[currentWeek - 1] ||
                 upsideDownPlayerRankings?.[currentWeek - 1] ||
