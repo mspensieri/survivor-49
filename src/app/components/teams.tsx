@@ -75,7 +75,7 @@ class Teams extends React.Component<{
     } = this.props;
 
     return (
-      <Row>
+      <Row style={{ marginTop: "10px" }}>
         {...thisWeekRankings.map((teamScore) => {
           let accoladesComponent;
           const { team } = teamScore;
