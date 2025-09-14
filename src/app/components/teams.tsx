@@ -5,10 +5,12 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import React from "react";
 
-import { computePlayerScore, computePlayerStatus } from "../data/weeks";
-import { PlayerRankings, TeamRankings } from "../data/rankings";
-import { UpsideDownPlayerRankings } from "../data/upsideDownRankings";
 import { Player } from "../data/types";
+import {
+  PlayerRankings,
+  TeamRankings,
+  UpsideDownPlayerRankings,
+} from "../providers/types";
 
 const styles: Record<string, React.CSSProperties> = {
   indicatorGreenLarge: {
@@ -61,14 +63,9 @@ const styles: Record<string, React.CSSProperties> = {
 class Teams extends React.Component<{
   thisWeekRankings: TeamRankings;
   thisWeekPlayerRankings: PlayerRankings | UpsideDownPlayerRankings;
-  currentWeek: number;
 }> {
   render() {
-    const {
-      thisWeekRankings = [],
-      thisWeekPlayerRankings = [],
-      currentWeek,
-    } = this.props;
+    const { thisWeekRankings = [], thisWeekPlayerRankings = [] } = this.props;
 
     return (
       <Row>

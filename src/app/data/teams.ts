@@ -1,6 +1,5 @@
 import { PLAYERS } from "./players";
 import { Team } from "./types";
-import { computePlayerScore, computeUpsideDownPlayerScore } from "./weeks";
 
 const {
   ALEX,
@@ -321,30 +320,6 @@ export const teams: Array<Team> = [
     winner: NICOLE,
   },
 ];
-
-export function computeTeamScore(team: Team, weekNumber: number) {
-  let score = 0;
-
-  for (const player of team.players) {
-    score += computePlayerScore(player, weekNumber, "total");
-  }
-
-  return score;
-}
-
-export function computeUpsideDownTeamScore(team: Team, weekNumber: number) {
-  let score = 0;
-
-  for (const player of team.players) {
-    score += computeUpsideDownPlayerScore(player, weekNumber);
-  }
-
-  return score;
-}
-
-export function getTeamScore(team: Team, weekNumber: number) {
-  return computeTeamScore(team, weekNumber) || "-";
-}
 
 export const fakeTeams = [
   {

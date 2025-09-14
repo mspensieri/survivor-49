@@ -3,7 +3,7 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
 
-import { TeamRankings } from "../data/rankings";
+import { TeamRankings } from "../providers/types";
 
 const styles = {
   indicatorGreen: {

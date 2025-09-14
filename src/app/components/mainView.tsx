@@ -10,9 +10,12 @@ import { airDates, weeks } from "../data/weeks";
 import {
   getTeamRankings,
   getPlayerRankings,
+} from "../providers/rankingsProvider";
+import {
   TeamRankings,
   PlayerRankings,
-} from "../data/rankings";
+  UpsideDownPlayerRankings,
+} from "../providers/types";
 import { teams, fakeTeams } from "../data/teams";
 import Leaderboard from "../components/leaderboard";
 import Teams from "../components/teams";
@@ -21,7 +24,6 @@ import Rules from "../components/rules";
 import WeekSelectorAccordion from "../components/weekSelectorAccordion";
 import React from "react";
 import { Container } from "react-bootstrap";
-import { UpsideDownPlayerRankings } from "../data/upsideDownRankings";
 
 const currentWeek = weeks.length;
 
@@ -172,7 +174,6 @@ class MainView extends React.Component<{
               upsideDownPlayerRankings?.[currentWeek - 1] ||
               []
             }
-            currentWeek={currentWeek}
           ></Teams>
         );
       } else {
@@ -185,7 +186,6 @@ class MainView extends React.Component<{
                 upsideDownPlayerRankings?.[currentWeek - 1] ||
                 []
               }
-              currentWeek={currentWeek}
             ></Teams>
           </SpoilerMask>
         );

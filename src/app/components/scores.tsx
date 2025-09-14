@@ -2,11 +2,10 @@
 
 import Badge from "react-bootstrap/Badge";
 import React from "react";
-
-import { PlayerRankings } from "../data/rankings";
 import { Accordion, Card, Col, Container, Row } from "react-bootstrap";
+
+import { PlayerRankings, UpsideDownPlayerRankings } from "../providers/types";
 import { PlayerScore, Team, UpsideDownPlayerScore } from "../data/types";
-import { UpsideDownPlayerRankings } from "../data/upsideDownRankings";
 
 const styles: Record<string, React.CSSProperties> = {
   badge: { width: "90px", position: "absolute", top: "16px", right: "16px" },
