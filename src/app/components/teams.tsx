@@ -11,6 +11,8 @@ import {
   TeamRankings,
   UpsideDownPlayerRankings,
 } from "../providers/types";
+import { airDates } from "../data/weeks";
+import { SWAP_DEADLINE } from "../data/teams";
 
 const styles: Record<string, React.CSSProperties> = {
   indicatorGreenLarge: {
@@ -62,18 +64,27 @@ const styles: Record<string, React.CSSProperties> = {
 
 class Teams extends React.Component<{
   thisWeekRankings: TeamRankings;
-  thisWeekPlayerRankings: PlayerRankings | UpsideDownPlayerRankings;
+  playerRankings: Array<PlayerRankings> | Array<UpsideDownPlayerRankings>;
+  currentWeek: number;
 }> {
   render() {
-    const { thisWeekRankings = [], thisWeekPlayerRankings = [] } = this.props;
+    const {
+      thisWeekRankings = [],
+      playerRankings = [],
+      currentWeek,
+    } = this.props;
 
     return (
       <Row>
         {...thisWeekRankings.map((teamScore) => {
           let accoladesComponent;
+          const { team } = teamScore;
+          const players = [...team.players].concat(
+            team.swap ? [team.swap.playerIn] : []
+          );
 
-          if (teamScore.team.accolades) {
-            const { first, second, third } = teamScore.team.accolades;
+          if (team.accolades) {
+            const { first, second, third } = team.accolades;
             accoladesComponent = (
               <div style={styles.accolades}>
                 {first && (
@@ -96,7 +107,7 @@ class Teams extends React.Component<{
           }
 
           return (
-            <Col key={teamScore.team.name} xs={12} sm={6} md={4} lg={3}>
+            <Col key={team.name} xs={12} sm={6} md={4} lg={3}>
               <Card style={styles.card}>
                 {accoladesComponent}
                 <Card.Body>
@@ -105,24 +116,46 @@ class Teams extends React.Component<{
                   </Card.Title>
                   <Card.Title
                     style={
-                      teamScore.team.name.length > 21
+                      team.name.length > 21
                         ? styles.teamNameSmall
                         : styles.teamName
                     }
                   >
-                    {teamScore.team.name}
+                    {team.name}
                   </Card.Title>
                   <hr />
-                  {...[...teamScore.team.players]
-                    .sort(
-                      (a, b) =>
-                        thisWeekPlayerRankings.find((r) => r.player === b)!
-                          .total -
-                        thisWeekPlayerRankings.find((r) => r.player === a)!
-                          .total
-                    )
-                    .map((player: Player, j) => {
-                      const playerScore = thisWeekPlayerRankings.find(
+                  {...players
+                    .map((player) => {
+                      if (team.swap?.playerIn === player) {
+                        return {
+                          player,
+                          scoreForTeam:
+                            playerRankings[currentWeek].find(
+                              (r) => r.player === player
+                            )!.total -
+                            playerRankings[team.swap.week - 1].find(
+                              (r) => r.player === player
+                            )!.total,
+                        };
+                      } else if (team.swap?.playerOut === player) {
+                        return {
+                          player,
+                          scoreForTeam: playerRankings[team.swap.week].find(
+                            (r) => r.player === player
+                          )!.total,
+                        };
+                      } else {
+                        return {
+                          player,
+                          scoreForTeam: playerRankings[currentWeek].find(
+                            (r) => r.player === player
+                          )!.total,
+                        };
+                      }
+                    })
+                    .sort((a, b) => b.scoreForTeam - a.scoreForTeam)
+                    .map(({ player, scoreForTeam: score }, j) => {
+                      const playerScore = playerRankings[currentWeek].find(
                         (r) => r.player === player
                       )!;
 
@@ -142,10 +175,29 @@ class Teams extends React.Component<{
                           ) : (
                             player.name
                           )}{" "}
-                          ({playerScore.total || 0})
+                          ({score || 0})
                         </Card.Text>
                       );
                     })}
+                  {team.swap ? (
+                    <>
+                      <hr />
+                      <Card.Text>
+                        {team.swap.playerOut.name} ➡️ {team.swap.playerIn.name}{" "}
+                        ({airDates[team.swap.week]})
+                      </Card.Text>
+                    </>
+                  ) : (
+                    <>
+                      <Card.Text>&nbsp;</Card.Text>
+                      <hr />
+                      <Card.Text>
+                        {currentWeek > SWAP_DEADLINE
+                          ? "Swap expired"
+                          : "Swap available"}
+                      </Card.Text>
+                    </>
+                  )}
                 </Card.Body>
               </Card>
             </Col>

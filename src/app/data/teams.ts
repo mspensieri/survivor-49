@@ -22,6 +22,8 @@ const {
   STEVEN,
 } = PLAYERS;
 
+export const SWAP_DEADLINE = 6;
+
 export const teams: Array<Team> = [
   {
     captain: "Alex",

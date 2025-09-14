@@ -169,11 +169,8 @@ class MainView extends React.Component<{
         return (
           <Teams
             thisWeekRankings={teamRankings[currentWeek - 1]}
-            thisWeekPlayerRankings={
-              playerRankings?.[currentWeek - 1] ||
-              upsideDownPlayerRankings?.[currentWeek - 1] ||
-              []
-            }
+            playerRankings={playerRankings || upsideDownPlayerRankings || []}
+            currentWeek={currentWeek - 1}
           ></Teams>
         );
       } else {
@@ -181,11 +178,8 @@ class MainView extends React.Component<{
           <SpoilerMask>
             <Teams
               thisWeekRankings={getTeamRankings(fakeTeams).standard[0]}
-              thisWeekPlayerRankings={
-                playerRankings?.[currentWeek - 1] ||
-                upsideDownPlayerRankings?.[currentWeek - 1] ||
-                []
-              }
+              playerRankings={playerRankings || upsideDownPlayerRankings || []}
+              currentWeek={currentWeek - 1}
             ></Teams>
           </SpoilerMask>
         );
