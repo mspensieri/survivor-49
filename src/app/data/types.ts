@@ -34,6 +34,11 @@ export type Team = {
   };
   winner: Player;
   players: Array<Player>;
+  swap?: {
+    week: number;
+    playerOut: Player;
+    playerIn: Player;
+  };
 };
 
 export type TeamScore = {
