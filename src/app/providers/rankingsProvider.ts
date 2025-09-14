@@ -1,4 +1,10 @@
-import { Player, Team } from "../data/types";
+import {
+  Player,
+  PlayerScore,
+  Team,
+  TeamScore,
+  UpsideDownPlayerScore,
+} from "../data/types";
 import { weeks } from "../data/weeks";
 import {
   computePlayerScore,
@@ -16,74 +22,55 @@ import {
   UpsideDownPlayerRankings,
 } from "./types";
 
+function assignRanks<T extends { total: number; rank: number }>(
+  items: Array<T>
+): Array<T> {
+  for (let i = 1; i < items.length; i++) {
+    const curr = items[i];
+    const prev = items[i - 1];
+
+    curr.rank = curr.total === prev.total ? prev.rank : prev.rank + 1;
+  }
+
+  return items;
+}
+
 function getTeamRankingsForWeek(
   teams: Array<Team>,
   weekNumber: number
 ): TeamRankings {
-  const partialRankings = [...teams]
-    .map((team) => {
-      return {
-        team,
-        total: computeTeamScore(team, weekNumber),
-      };
-    })
-    .sort((a, b) => {
-      return b.total - a.total;
-    });
-
-  const rankings: TeamRankings = [
-    {
-      ...partialRankings[0],
-      rank: 0,
-    },
-  ];
-
-  for (let i = 1; i < partialRankings.length; i++) {
-    const curr = partialRankings[i];
-    const prev = rankings[i - 1];
-
-    rankings.push({
-      ...curr,
-      rank: curr.total === prev.total ? prev.rank : prev.rank + 1,
-    });
-  }
-
-  return rankings;
+  return assignRanks<TeamScore>(
+    teams
+      .map((team) => {
+        return {
+          team,
+          total: computeTeamScore(team, weekNumber),
+          rank: 0,
+        };
+      })
+      .sort((a, b) => {
+        return b.total - a.total;
+      })
+  );
 }
 
 function getUpsideDownTeamRankingsForWeek(
   teams: Array<Team>,
   weekNumber: number
 ): TeamRankings {
-  const partialRankings = [...teams]
-    .map((team) => {
-      return {
-        team,
-        total: computeUpsideDownTeamScore(team, weekNumber),
-      };
-    })
-    .sort((a, b) => {
-      return b.total - a.total;
-    });
-
-  const rankings: TeamRankings = [
-    {
-      ...partialRankings[0],
-      rank: 0,
-    },
-  ];
-
-  for (let i = 1; i < partialRankings.length; i++) {
-    const curr = partialRankings[i];
-    const prev = rankings[i - 1];
-
-    rankings.push({
-      ...curr,
-      rank: curr.total === prev.total ? prev.rank : prev.rank + 1,
-    });
-  }
-
-  return rankings;
+  return assignRanks<TeamScore>(
+    teams
+      .map((team) => {
+        return {
+          team,
+          total: computeUpsideDownTeamScore(team, weekNumber),
+          rank: 0,
+        };
+      })
+      .sort((a, b) => {
+        return b.total - a.total;
+      })
+  );
 }
 
 export function getTeamRankings(teams: Array<Team>): {
@@ -104,91 +91,63 @@ function getPlayerRankingsForWeek(
   players: Array<Player>,
   weekNumber: number
 ): PlayerRankings {
-  const partialRankings = [...players]
-    .map((player) => {
-      return {
-        player,
-        total: computePlayerScore(player, weekNumber, "total"),
-        points: {
-          survival: computePlayerScore(player, weekNumber, "survival"),
-          votes: computePlayerScore(player, weekNumber, "votes"),
-          teamImmunity: computePlayerScore(player, weekNumber, "teamImmunity"),
-          individualImmunity: computePlayerScore(
-            player,
-            weekNumber,
-            "individualImmunity"
-          ),
-          advantage: computePlayerScore(player, weekNumber, "advantage"),
-          idolFound: computePlayerScore(player, weekNumber, "idolFound"),
-          voteNullified: computePlayerScore(
-            player,
-            weekNumber,
-            "voteNullified"
-          ),
-          placement: computePlayerScore(player, weekNumber, "placement"),
-        },
-        status: computePlayerStatus(player, weekNumber),
-      };
-    })
-    .sort((a, b) => {
-      return b.total - a.total;
-    });
-
-  const rankings: PlayerRankings = [
-    {
-      ...partialRankings[0],
-      rank: 0,
-    },
-  ];
-
-  for (let i = 1; i < partialRankings.length; i++) {
-    const curr = partialRankings[i];
-    const prev = rankings[i - 1];
-
-    rankings.push({
-      ...curr,
-      rank: curr.total === prev.total ? prev.rank : prev.rank + 1,
-    });
-  }
-
-  return rankings;
+  return assignRanks<PlayerScore>(
+    players
+      .map((player) => {
+        return {
+          player,
+          total: computePlayerScore(player, weekNumber, "total"),
+          points: {
+            survival: computePlayerScore(player, weekNumber, "survival"),
+            votes: computePlayerScore(player, weekNumber, "votes"),
+            teamImmunity: computePlayerScore(
+              player,
+              weekNumber,
+              "teamImmunity"
+            ),
+            individualImmunity: computePlayerScore(
+              player,
+              weekNumber,
+              "individualImmunity"
+            ),
+            advantage: computePlayerScore(player, weekNumber, "advantage"),
+            idolFound: computePlayerScore(player, weekNumber, "idolFound"),
+            voteNullified: computePlayerScore(
+              player,
+              weekNumber,
+              "voteNullified"
+            ),
+            placement: computePlayerScore(player, weekNumber, "placement"),
+          },
+          status: computePlayerStatus(player, weekNumber),
+          rank: 0,
+        };
+      })
+      .sort((a, b) => {
+        return b.total - a.total;
+      })
+  );
 }
 
 function getUpsideDownPlayerRankingsForWeek(
   players: Array<Player>,
   weekNumber: number
 ): UpsideDownPlayerRankings {
-  const partialRankings = [...players]
-    .map((player) => {
-      return {
-        player,
-        total: computeUpsideDownPlayerScore(player, weekNumber),
-        achievements: getPlayerUpsideDownAchievements(player, weekNumber),
-        status: computePlayerStatus(player, weekNumber),
-      };
-    })
-    .sort((a, b) => {
-      return b.total - a.total;
-    });
-
-  const rankings: UpsideDownPlayerRankings = [
-    {
-      ...partialRankings[0],
-      rank: 0,
-    },
-  ];
-
-  for (let i = 1; i < partialRankings.length; i++) {
-    const curr = partialRankings[i];
-    const prev = rankings[i - 1];
-
-    rankings.push({
-      ...curr,
-      rank: curr.total === prev.total ? prev.rank : prev.rank + 1,
-    });
-  }
-
-  return rankings;
+  return assignRanks<UpsideDownPlayerScore>(
+    players
+      .map((player) => {
+        return {
+          player,
+          total: computeUpsideDownPlayerScore(player, weekNumber),
+          achievements: getPlayerUpsideDownAchievements(player, weekNumber),
+          status: computePlayerStatus(player, weekNumber),
+          rank: 0,
+        };
+      })
+      .sort((a, b) => {
+        return b.total - a.total;
+      })
+  );
 }
 
 export function getPlayerRankings(players: Array<Player>): {
