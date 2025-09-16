@@ -65,7 +65,7 @@
   }
 
   .card {
-    --bs-card-spacer-y: 20px;
+    --bs-card-spacer-y: 10px;
     --bs-card-bg: var(--bs-link-color);
     margin-bottom: 24px;
   }
@@ -151,7 +151,7 @@
     --bs-body-bg: var(--background-color);
     --bs-link-color: var(--link-color);
     --bs-tertiary-bg-rgb: var(--background-color);
-    --bs-card-spacer-y: 20px;
+    --bs-card-spacer-y: 10px;
     --bs-table-border-color: var(--bs-link-color);
 
     --background-color: rgb(2, 40, 105);

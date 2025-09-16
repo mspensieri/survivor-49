@@ -50,6 +50,8 @@ const styles: Record<string, React.CSSProperties> = {
   },
   card: {
     minHeight: "270px",
+    paddingTop: "10px",
+    paddingBottom: "10px",
   },
   teamName: {
     fontSize: "20pt",
