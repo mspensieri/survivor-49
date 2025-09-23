@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import React from "react";
 
-import { Player } from "../data/types";
 import {
   PlayerRankings,
   TeamRankings,
@@ -185,8 +184,8 @@ class Teams extends React.Component<{
                     <>
                       <hr />
                       <Card.Text>
-                        {team.swap.playerOut.name} ➡️ {team.swap.playerIn.name}{" "}
-                        ({airDates[team.swap.week]})
+                        {team.swap.playerOut.name} ➔ {team.swap.playerIn.name} (
+                        {airDates[team.swap.week]})
                       </Card.Text>
                     </>
                   ) : (

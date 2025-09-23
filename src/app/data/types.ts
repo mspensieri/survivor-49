@@ -32,7 +32,7 @@ export type Team = {
     second?: Array<number>;
     third?: Array<number>;
   };
-  winner: Player;
+  winner: Player | "UNKNOWN";
   players: Array<Player>;
   swap?: {
     week: number;
