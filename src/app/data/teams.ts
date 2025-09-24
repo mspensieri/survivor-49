@@ -112,8 +112,8 @@ export const teams: Array<Team> = [
     accolades: {
       second: [44],
     },
-    players: [],
-    winner: "UNKNOWN",
+    players: [SOPHIE, ALEX, NATE, NICOLE, MATT, JEREMIAH],
+    winner: SOPHIE,
   },
   {
     captain: "Sandy",
