@@ -257,8 +257,8 @@ export const teams: Array<Team> = [
   {
     captain: "Sab and Bruno",
     name: "Bing and Bugz",
-    players: [],
-    winner: "UNKNOWN",
+    players: [JAKE, SAVANNAH, SAGE, ANNIE, STEVEN, JAWAN],
+    winner: SAVANNAH,
   },
   {
     captain: "Meagan",
