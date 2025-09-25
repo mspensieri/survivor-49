@@ -70,6 +70,9 @@ const styles: Record<string, React.CSSProperties> = {
   scoreLabel: {
     color: "var(--score-label-color-override)",
   },
+  popularityEmoji: {
+    filter: "var(--upside-down-image-filter)",
+  },
 };
 
 class Scores extends React.Component<{
@@ -316,6 +319,21 @@ class Scores extends React.Component<{
               rank = <span>#{thisWeekScore.rank + 1}</span>;
             }
 
+            const popularity = teams.reduce((acc, curr) => {
+              return curr.players.includes(thisWeekScore.player)
+                ? acc + 1
+                : acc;
+            }, 0);
+
+            const popularityEmoji =
+              popularity >= 17
+                ? "⭐️"
+                : popularity >= 13
+                ? "🔥"
+                : popularity >= 11
+                ? "👍"
+                : "☘️";
+
             return (
               <Row
                 key={thisWeekScore.player.name}
@@ -359,12 +377,11 @@ class Scores extends React.Component<{
                             <strong style={styles.scoreLabel}>
                               Popularity:{" "}
                             </strong>
-                            {teams.reduce((acc, curr) => {
-                              return curr.players.includes(thisWeekScore.player)
-                                ? acc + 1
-                                : acc;
-                            }, 0)}
-                            <span style={styles.units}> teams</span>
+                            {popularity}{" "}
+                            <span style={styles.units}> teams</span>{" "}
+                            <span style={styles.popularityEmoji}>
+                              {popularityEmoji}
+                            </span>
                           </div>
                           {this.getBadge(thisWeekScore)}
                         </div>
