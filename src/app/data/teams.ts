@@ -246,13 +246,13 @@ export const teams: Array<Team> = [
     captain: "Jacob",
     name: "With You 100%",
     players: [KRISTINA, JAKE, ALEX, NATE, ANNIE, JEREMIAH],
-    winner: "UNKNOWN",
+    winner: KRISTINA,
   },
   {
     captain: "Jacklyn",
     name: "JSpenny",
     players: [MC, KRISTINA, JAKE, JASON, SOPHIE, JAWAN],
-    winner: "UNKNOWN",
+    winner: MC,
   },
   {
     captain: "Sab and Bruno",
