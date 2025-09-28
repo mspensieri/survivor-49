@@ -99,6 +99,11 @@ export const teams: Array<Team> = [
     },
     players: [STEVEN, RIZO, NATE, JAKE, JAWAN, NICOLE],
     winner: JAKE,
+    swap: {
+      week: 1,
+      playerOut: NICOLE,
+      playerIn: JASON,
+    },
   },
   {
     captain: "Danny",
@@ -114,6 +119,11 @@ export const teams: Array<Team> = [
     },
     players: [SOPHIE, ALEX, NATE, NICOLE, MATT, JEREMIAH],
     winner: SOPHIE,
+    swap: {
+      week: 1,
+      playerOut: NICOLE,
+      playerIn: JASON,
+    },
   },
   {
     captain: "Sandy",

@@ -134,14 +134,14 @@ class Teams extends React.Component<{
                             playerRankings[currentWeek].find(
                               (r) => r.player === player
                             )!.total -
-                            playerRankings[team.swap.week - 1].find(
+                            playerRankings[team.swap.week - 1]?.find(
                               (r) => r.player === player
                             )!.total,
                         };
                       } else if (team.swap?.playerOut === player) {
                         return {
                           player,
-                          scoreForTeam: playerRankings[team.swap.week].find(
+                          scoreForTeam: playerRankings[team.swap.week]?.find(
                             (r) => r.player === player
                           )!.total,
                         };
@@ -154,7 +154,9 @@ class Teams extends React.Component<{
                         };
                       }
                     })
-                    .sort((a, b) => b.scoreForTeam - a.scoreForTeam)
+                    .sort(
+                      (a, b) => (b.scoreForTeam || 0) - (a.scoreForTeam || 0)
+                    )
                     .map(({ player, scoreForTeam: score }, j) => {
                       const playerScore = playerRankings[currentWeek].find(
                         (r) => r.player === player
