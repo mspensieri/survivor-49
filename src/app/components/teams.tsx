@@ -141,9 +141,9 @@ class Teams extends React.Component<{
                       } else if (team.swap?.playerOut === player) {
                         return {
                           player,
-                          scoreForTeam: playerRankings[team.swap.week]?.find(
-                            (r) => r.player === player
-                          )!.total,
+                          scoreForTeam: playerRankings[
+                            team.swap.week - 1
+                          ]?.find((r) => r.player === player)!.total,
                         };
                       } else {
                         return {
