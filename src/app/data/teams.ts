@@ -110,6 +110,11 @@ export const teams: Array<Team> = [
     name: "chud (lower case)",
     players: [KRISTINA, JEREMIAH, NATE, JAWAN, ALEX, NICOLE],
     winner: NATE,
+    swap: {
+      week: 1,
+      playerOut: NICOLE,
+      playerIn: MATT,
+    },
   },
   {
     captain: "Stanley",
