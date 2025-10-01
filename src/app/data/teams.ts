@@ -175,6 +175,11 @@ export const teams: Array<Team> = [
     name: "Sole Survivor of Sass",
     players: [SAVANNAH, SAGE, KRISTINA, JAWAN, ALEX, NICOLE],
     winner: SAVANNAH,
+    swap: {
+      week: 1,
+      playerOut: NICOLE,
+      playerIn: MC,
+    },
   },
   {
     captain: "Frank",
@@ -275,6 +280,11 @@ export const teams: Array<Team> = [
     name: "Totally Oswald",
     players: [ANNIE, MC, JAKE, MATT, NICOLE, SOPHIE],
     winner: ANNIE,
+    swap: {
+      week: 1,
+      playerOut: NICOLE,
+      playerIn: SAVANNAH,
+    },
   },
   {
     captain: "Taylor",
