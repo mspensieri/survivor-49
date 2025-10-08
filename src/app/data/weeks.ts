@@ -44,6 +44,7 @@ const {
 
 export const weeks: Array<Week> = [
   {
+    eliminated: [NICOLE],
     [ALEX]: {
       votes: 1,
       upsideDown: [
@@ -127,7 +128,7 @@ export const weeks: Array<Week> = [
           points: 6,
         },
         {
-          reason: "Voted off first",
+          reason: "Voted out first",
           points: 6,
         },
       ],
@@ -167,6 +168,129 @@ export const weeks: Array<Week> = [
       teamImmunity: 1,
     },
     [STEVEN]: {
+      teamImmunity: 1,
+    },
+  },
+  {
+    eliminated: [ANNIE],
+    [ALEX]: {
+      survival: 1,
+      votes: 1,
+      advantage: 1,
+      idolFound: 2,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+        {
+          reason: "Abysmal challenge",
+          points: 2,
+        },
+      ],
+    },
+    [ANNIE]: {
+      survival: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+        {
+          reason: "Voted wrong",
+          points: 2,
+        },
+        {
+          reason: "Blindsided at tribal",
+          points: 6,
+        },
+        {
+          reason: "Voted out pre-merge",
+          points: 4,
+        },
+      ],
+    },
+    [JAKE]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+      ],
+    },
+    [JASON]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [JAWAN]: {
+      survival: 1,
+      teamImmunity: 1,
+      advantage: 1,
+    },
+    [JEREMIAH]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+      ],
+    },
+    [KRISTINA]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [MATT]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [MC]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [NATE]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [RIZO]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [SAGE]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [SAVANNAH]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [SHANNON]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [SOPHI]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+        {
+          reason: "Abysmal challenge",
+          points: 2,
+        },
+      ],
+    },
+    [SOPHIE]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [STEVEN]: {
+      survival: 1,
       teamImmunity: 1,
     },
   },

@@ -66,12 +66,22 @@ export const teams: Array<Team> = [
     name: "Operation Italy",
     players: [ANNIE, SAGE, JASON, JAKE, JAWAN, SOPHIE],
     winner: JASON,
+    swap: {
+      week: 2,
+      playerOut: ANNIE,
+      playerIn: SAVANNAH,
+    },
   },
   {
     captain: "Elizabeth",
     name: "Play Your Idol",
     players: [JAWAN, JEREMIAH, ANNIE, STEVEN, SOPHIE, MC],
     winner: JAWAN,
+    swap: {
+      week: 2,
+      playerOut: ANNIE,
+      playerIn: SAVANNAH,
+    },
   },
   {
     captain: "Mikey",
