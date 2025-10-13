@@ -88,6 +88,11 @@ export const teams: Array<Team> = [
     name: "First Time in Fiji",
     players: [MATT, JAKE, STEVEN, SAGE, SOPHIE, SHANNON],
     winner: SHANNON,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: MC,
+    },
   },
   {
     captain: "Alec",
@@ -148,6 +153,11 @@ export const teams: Array<Team> = [
     },
     players: [KRISTINA, MC, RIZO, JAKE, MATT, SOPHI],
     winner: KRISTINA,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: JASON,
+    },
   },
   {
     captain: "Colleen",
@@ -230,6 +240,11 @@ export const teams: Array<Team> = [
     },
     players: [JAKE, STEVEN, RIZO, JASON, MC, SOPHI],
     winner: MC,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: NATE,
+    },
   },
   {
     captain: "Andrea R",
@@ -270,6 +285,11 @@ export const teams: Array<Team> = [
     },
     players: [SAVANNAH, JEREMIAH, RIZO, JAKE, SOPHI, SHANNON],
     winner: JEREMIAH,
+    swap: {
+      week: 3,
+      playerOut: JEREMIAH,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Andy and Lally",
@@ -347,6 +367,11 @@ export const teams: Array<Team> = [
     winner: SAVANNAH,
     accolades: {
       first: [45],
+    },
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: JASON,
     },
   },
 ];
