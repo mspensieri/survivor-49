@@ -151,7 +151,7 @@ export const teams: Array<Team> = [
     accolades: {
       second: [46],
     },
-    players: [KRISTINA, MC, RIZO, JAKE, MATT, SOPHI],
+    players: [KRISTINA, MC, RIZO, JAKE, MATT, SOPHIE],
     winner: KRISTINA,
     swap: {
       week: 3,
