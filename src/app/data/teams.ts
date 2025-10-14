@@ -54,6 +54,11 @@ export const teams: Array<Team> = [
     name: "Come On In Guys",
     players: [JAKE, MATT, ANNIE, STEVEN, SHANNON, MC],
     winner: MC,
+    swap: {
+      week: 3,
+      playerOut: ANNIE,
+      playerIn: JASON,
+    },
   },
   {
     captain: "Andrea and Susan",
@@ -331,6 +336,11 @@ export const teams: Array<Team> = [
     name: "Clyde's Castaways",
     players: [ANNIE, SAGE, MC, JAWAN, JASON, JEREMIAH],
     winner: JAWAN,
+    swap: {
+      week: 3,
+      playerOut: ANNIE,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Dan and Dana",
