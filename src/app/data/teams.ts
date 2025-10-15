@@ -39,6 +39,11 @@ export const teams: Array<Team> = [
     name: "Here's Your Headstone",
     players: [ANNIE, KRISTINA, MC, JAKE, SHANNON, SOPHI],
     winner: ANNIE,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: NATE,
+    },
   },
   {
     captain: "Joanne",
@@ -184,6 +189,11 @@ export const teams: Array<Team> = [
     name: "Jeff's Dimples",
     players: [KRISTINA, MC, RIZO, JASON, JAKE, JAWAN],
     winner: MC,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Carrie",
@@ -307,12 +317,22 @@ export const teams: Array<Team> = [
     name: "With You 100%",
     players: [KRISTINA, JAKE, ALEX, NATE, ANNIE, JEREMIAH],
     winner: KRISTINA,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: SHANNON,
+    },
   },
   {
     captain: "Jacklyn",
     name: "JSpenny",
     players: [MC, KRISTINA, JAKE, JASON, SOPHIE, JAWAN],
     winner: MC,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Sab and Bruno",
@@ -357,6 +377,11 @@ export const teams: Array<Team> = [
     },
     players: [STEVEN, SAGE, JAKE, SOPHI, SOPHIE, SHANNON],
     winner: JAKE,
+    swap: {
+      week: 3,
+      playerOut: JAKE,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Jeremy",
