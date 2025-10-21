@@ -377,6 +377,11 @@ export const teams: Array<Team> = [
     name: "Ducky & Boinko Forever",
     players: [ANNIE, MC, JAKE, JASON, NICOLE, SOPHIE],
     winner: JASON,
+    swap: {
+      week: 4,
+      playerOut: ANNIE,
+      playerIn: RIZO,
+    },
   },
   {
     captain: "Dean",
