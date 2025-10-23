@@ -179,6 +179,11 @@ export const teams: Array<Team> = [
     name: "Mermaid Dragon",
     players: [SAVANNAH, RIZO, MC, JAKE, JAWAN, SHANNON],
     winner: JAWAN,
+    swap: {
+      week: 4,
+      playerOut: JAKE,
+      playerIn: NATE,
+    },
   },
   {
     captain: "Brendan",
@@ -188,6 +193,11 @@ export const teams: Array<Team> = [
     },
     players: [SAVANNAH, SAGE, RIZO, JAKE, SOPHI, SHANNON],
     winner: JAKE,
+    swap: {
+      week: 4,
+      playerOut: JAKE,
+      playerIn: STEVEN,
+    },
   },
   {
     captain: "Kevin",
@@ -219,6 +229,11 @@ export const teams: Array<Team> = [
     },
     players: [SAVANNAH, STEVEN, RIZO, JAKE, SOPHI, SHANNON],
     winner: SOPHI,
+    swap: {
+      week: 4,
+      playerOut: JAKE,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Sarah",
@@ -242,6 +257,11 @@ export const teams: Array<Team> = [
     name: "Chicken Dinner",
     players: [STEVEN, SAGE, NATE, JAKE, SOPHI, SOPHIE],
     winner: SOPHI,
+    swap: {
+      week: 4,
+      playerOut: JAKE,
+      playerIn: RIZO,
+    },
   },
   {
     captain: "Vanesa",
@@ -276,6 +296,11 @@ export const teams: Array<Team> = [
     name: "Here For Friendship",
     players: [ANNIE, SAGE, JAWAN, MATT, KRISTINA, MC],
     winner: SAGE,
+    swap: {
+      week: 4,
+      playerOut: ANNIE,
+      playerIn: RIZO,
+    },
   },
   {
     captain: "Menard",
@@ -321,6 +346,11 @@ export const teams: Array<Team> = [
     name: "Ogatally DeVotes",
     players: [SAGE, MC, JAKE, JASON, JAWAN, NICOLE],
     winner: JAWAN,
+    swap: {
+      week: 4,
+      playerOut: NICOLE,
+      playerIn: RIZO,
+    },
   },
   {
     captain: "Jacob",
@@ -403,6 +433,11 @@ export const teams: Array<Team> = [
     name: "Jere-atrics",
     players: [NATE, JAKE, STEVEN, SOPHIE, SHANNON, SAVANNAH],
     winner: SOPHIE,
+    swap: {
+      week: 4,
+      playerOut: JAKE,
+      playerIn: MC,
+    },
   },
   {
     captain: "Jessie",
