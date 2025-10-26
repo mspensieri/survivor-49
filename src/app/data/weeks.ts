@@ -503,4 +503,102 @@ export const weeks: Array<Week> = [
       teamImmunity: 1,
     },
   },
+  {
+    eliminated: [JASON],
+    [ALEX]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [JASON]: {
+      survival: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+        {
+          reason: "Voted wrong",
+          points: 2,
+        },
+        {
+          reason: "Voted out pre-merge",
+          points: 4,
+        },
+      ],
+    },
+    [JAWAN]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+      ],
+    },
+    [KRISTINA]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [MC]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [NATE]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+      ],
+    },
+    [RIZO]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+      ],
+    },
+    [SAGE]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [SAVANNAH]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+      ],
+    },
+    [SHANNON]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [SOPHI]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Losing team",
+          points: 2,
+        },
+      ],
+    },
+    [SOPHIE]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+    [STEVEN]: {
+      survival: 1,
+      teamImmunity: 1,
+    },
+  },
 ];
