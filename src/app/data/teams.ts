@@ -33,6 +33,11 @@ export const teams: Array<Team> = [
     },
     players: [SAVANNAH, JEREMIAH, ALEX, KRISTINA, SOPHI, SHANNON],
     winner: ALEX,
+    swap: {
+      week: 5,
+      playerOut: JEREMIAH,
+      playerIn: SAGE,
+    },
   },
   {
     captain: "Kara",
@@ -330,6 +335,11 @@ export const teams: Array<Team> = [
     name: "AA Tribe",
     players: [ANNIE, NATE, MC, JAKE, JAWAN, KRISTINA],
     winner: JAKE,
+    swap: {
+      week: 5,
+      playerOut: ANNIE,
+      playerIn: SAGE,
+    },
   },
   {
     captain: "Greg",
