@@ -323,6 +323,11 @@ export const teams: Array<Team> = [
     name: "LIVIN'",
     players: [SAVANNAH, JEREMIAH, STEVEN, JASON, NATE, SHANNON],
     winner: SHANNON,
+    swap: {
+      week: 5,
+      playerOut: JASON,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Elana",
