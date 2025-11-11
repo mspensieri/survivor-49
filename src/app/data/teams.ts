@@ -317,6 +317,11 @@ export const teams: Array<Team> = [
     name: "You Go Girl",
     players: [SAVANNAH, SAGE, KRISTINA, SOPHI, SOPHIE, SHANNON],
     winner: SAVANNAH,
+    swap: {
+      week: 6,
+      playerOut: SHANNON,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Leigh",
@@ -464,6 +469,11 @@ export const teams: Array<Team> = [
     name: "Outwit, Outplay, Out-Rizz",
     players: [SAVANNAH, STEVEN, RIZO, JAKE, SOPHI, SOPHIE],
     winner: RIZO,
+    swap: {
+      week: 7,
+      playerOut: JAKE,
+      playerIn: ALEX,
+    },
   },
   {
     captain: "Anne",
