@@ -879,4 +879,79 @@ export const weeks: Array<Week> = [
       ],
     },
   },
+  {
+    eliminated: [JAWAN],
+    [JAWAN]: {
+      survival: 1,
+      placement: 2,
+      upsideDown: [
+        {
+          reason: "Voted out post-merge",
+          points: 2,
+        },
+        {
+          reason: "Voted wrong",
+          points: 2,
+        },
+        {
+          reason: "Blindsided at tribal",
+          points: 6,
+        },
+      ],
+    },
+    [KRISTINA]: {
+      survival: 1,
+      upsideDown: [
+        {
+          reason: "Voted wrong",
+          points: 2,
+        },
+        {
+          reason: "Threatening to quit",
+          points: 4,
+        },
+      ],
+    },
+    [RIZO]: {
+      survival: 1,
+      votes: 1,
+      upsideDown: [
+        {
+          reason: "Random crying",
+          points: 4,
+        },
+      ],
+    },
+    [SAGE]: {
+      survival: 1,
+      upsideDown: [
+        {
+          reason: "Voted wrong",
+          points: 2,
+        },
+      ],
+    },
+    [SAVANNAH]: {
+      survival: 1,
+      votes: 2,
+    },
+    [SOPHI]: {
+      survival: 1,
+      votes: 1,
+    },
+    [SOPHIE]: {
+      survival: 1,
+      individualImmunity: 2,
+      votes: 1,
+    },
+    [STEVEN]: {
+      survival: 1,
+      upsideDown: [
+        {
+          reason: "Voted wrong",
+          points: 2,
+        },
+      ],
+    },
+  },
 ];
