@@ -997,4 +997,31 @@ export const weeks: Array<Week> = [
       individualImmunity: 2,
     },
   },
+  {
+    eliminated: [STEVEN],
+    [KRISTINA]: {
+      survival: 1,
+      votes: 1,
+    },
+    [RIZO]: {
+      survival: 1,
+      votes: 1,
+    },
+    [SAGE]: {
+      survival: 1,
+      votes: 1,
+    },
+    [SAVANNAH]: {
+      survival: 1,
+      individualImmunity: 2,
+    },
+    [SOPHI]: {
+      survival: 1,
+      votes: 1,
+    },
+    [STEVEN]: {
+      survival: 1,
+      placement: 2,
+    },
+  },
 ];
