@@ -227,6 +227,16 @@ class Scores extends React.Component<{
               thisWeekScore.points.placement,
               lastWeekScore?.points.placement
             )}
+            <br />
+          </>
+        )}
+        {thisWeekScore.points.fire! > 0 && (
+          <>
+            <strong>Fire: </strong>
+            {this.getScoreElement(
+              thisWeekScore.points.fire,
+              lastWeekScore?.points.fire
+            )}
           </>
         )}
       </>

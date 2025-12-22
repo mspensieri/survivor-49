@@ -23,7 +23,8 @@ export function computePlayerScore(
         (week[player.key]?.advantage || 0) +
         (week[player.key]?.idolFound || 0) +
         (week[player.key]?.voteNullified || 0) +
-        (week[player.key]?.placement || 0);
+        (week[player.key]?.placement || 0) +
+        (week[player.key]?.fire || 0);
     } else {
       score += week[player.key]?.[scoreKey] || 0;
     }

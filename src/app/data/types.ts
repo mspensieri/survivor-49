@@ -63,6 +63,7 @@ export type Points = {
   placement?: number;
   survival?: number;
   votes?: number;
+  fire?: number;
   upsideDown?: Array<UpsideDownAchievement>;
 };
 

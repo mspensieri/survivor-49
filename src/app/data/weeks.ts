@@ -689,7 +689,7 @@ export const weeks: Array<Week> = [
     },
   },
   {
-    eliminated: [NATE],
+    jury: [NATE],
     [ALEX]: {
       survival: 1,
       votes: 1,
@@ -764,7 +764,7 @@ export const weeks: Array<Week> = [
     },
   },
   {
-    eliminated: [MC],
+    jury: [MC],
     [ALEX]: {
       survival: 1,
       teamImmunity: 1,
@@ -819,7 +819,7 @@ export const weeks: Array<Week> = [
     },
   },
   {
-    eliminated: [ALEX],
+    jury: [ALEX],
     [ALEX]: {
       survival: 1,
       placement: 2,
@@ -880,7 +880,7 @@ export const weeks: Array<Week> = [
     },
   },
   {
-    eliminated: [JAWAN],
+    jury: [JAWAN],
     [JAWAN]: {
       survival: 1,
       placement: 2,
@@ -955,7 +955,7 @@ export const weeks: Array<Week> = [
     },
   },
   {
-    eliminated: [SOPHIE],
+    jury: [SOPHIE],
     [KRISTINA]: {
       survival: 1,
       votes: 1,
@@ -998,7 +998,7 @@ export const weeks: Array<Week> = [
     },
   },
   {
-    eliminated: [STEVEN],
+    jury: [STEVEN],
     [KRISTINA]: {
       survival: 1,
       votes: 1,
@@ -1022,6 +1022,38 @@ export const weeks: Array<Week> = [
     [STEVEN]: {
       survival: 1,
       placement: 2,
+    },
+  },
+  {
+    eliminated: [SOPHI, SAGE],
+    jury: [KRISTINA, RIZO],
+    [KRISTINA]: {
+      survival: 1,
+      placement: 3,
+    },
+    [RIZO]: {
+      survival: 2,
+      votes: 1,
+      placement: 5,
+    },
+    [SAGE]: {
+      survival: 2,
+      votes: 1,
+      placement: 7,
+    },
+    [SAVANNAH]: {
+      survival: 2,
+      individualImmunity: 2,
+      votes: 1,
+      placement: 10,
+      fire: 1,
+    },
+    [SOPHI]: {
+      survival: 2,
+      votes: 1,
+      advantage: 1,
+      individualImmunity: 2,
+      placement: 8,
     },
   },
 ];

@@ -118,6 +118,7 @@ function getPlayerRankingsForWeek(
               "voteNullified"
             ),
             placement: computePlayerScore(player, weekNumber, "placement"),
+            fire: computePlayerScore(player, weekNumber, "fire"),
           },
           status: computePlayerStatus(player, weekNumber),
           rank: 0,
